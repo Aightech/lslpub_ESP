@@ -41,16 +41,16 @@ void setup()
   //start listening
   Udp.begin(localPort);
 
-  //for(int i =0; i< NB_CH-1; i++)
-    //pinMode(5+i, OUTPUT);
+  for(int i =0; i< NB_CH-1; i++)
+    pinMode(12+i, OUTPUT);
 }
 
 void loop() 
 {
+  
   for(int i = 0 ; i< NB_CH; i++)
-    sample[index_save + i]= analogRead(0);
+    sample[index_save + i]= (i==0)?analogRead(0):digitalRead(12+i-1)*1024;
   index_save+=NB_CH;
-  index_send+=NB_CH;
   
   index_save%=NB_CH*BUF_LEN;
   
