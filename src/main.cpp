@@ -146,7 +146,7 @@ int main(int argc, char ** argv)
   try
     {
       //LSL stream output
-      lsl::stream_info info("ESP", "ESPSamples", nb_ch, lsl_rate, lsl::cf_float32);
+      lsl::stream_info info(stream_name, "ESPSamples", nb_ch, lsl_rate, lsl::cf_float32);
       lsl::stream_outlet outlet(info);
 
       //infinite loop
