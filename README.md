@@ -1,5 +1,5 @@
 # lslpub_ESP
-[Documentation](https://aightech.github.io/lslpub_ESP/html/d3/dcc/md__r_e_a_d_m_e.html)
+[Documentation](https://aightech.github.io/lslpub_ESP/html/index.html)
 
 ## 1 Presentation
 C++ programs that gets the data from ESP device and publishes them in a LSL stream.
