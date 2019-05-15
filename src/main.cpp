@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include <lsl_cpp.h>
+#include "tools.h"
 
 // NETWORK LIBS
 #ifdef WIN32 
@@ -28,49 +29,15 @@ typedef struct in_addr IN_ADDR;
 #define SAMPLING_FREQUENCY 2048
 #define CHUNK_SIZE 1
 
-void error(const char *msg)
-{
-  printf("%s",msg);
-  exit(0);
-}
-
-void usage(std::vector<std::string>& optf,  std::vector<std::string>& optl, std::vector<std::string>& optv)
-{
-  std::cout << "Usage: ./lslpub_OTB [OPTION ...]" << std::endl;
-  std::cout << "Options: " << std::endl;
-  for(int i = 0; i< optf.size(); i++)
-    std::cout << "         " << optf[i] << "\t" << optl[i] <<" (ex: " << optv[i] << " )"<< std::endl;
-  exit(0);
-}
-
-void get_arg(int argc, char ** argv, std::vector<std::string>& optf,  std::vector<std::string>& optl, std::vector<std::string>& optv)
-{
-  int i =1;
-  std::string help_flag = "-h";
-  while(i < argc)
-    {
-      if(help_flag.compare(argv[i])==0)
-	usage(optf,optl,optv);
-      int j = 0;
-      while(optf[j].compare(argv[i]) != 0)
-	{
-	  j++;
-	  if(j>= optf.size())
-	    usage(optf,optl,optv);
-	}
-      if(i+1 >= argc || argv[i+1][0] == '-')
-	usage(optf,optl,optv);
-      optv[j] = argv[i+1];
-      i+=2; 
-    }
-  for(int i = 0; i< optl.size(); i++)
-    std::cout << optl[i] <<" : " << optv[i] << std::endl;
-}
-
 
 /**
- * store data of array into vectors
- **/
+ * @brief fill_chunk transform a unsigned char array into a typed vector of vector.
+ * @tparam T Type of the vector.
+ * @param from Unsigned char array to transform.
+ * @param to Resulting vector of vector of type T.
+ * @param nb_ch Number of channel of the stream.
+ * @param n Number of sample in the array.
+ */
 template<class T>
 void fill_chunk(unsigned char* from, std::vector<std::vector<T>>& to, int nb_ch, int n=CHUNK_SIZE)
 {
