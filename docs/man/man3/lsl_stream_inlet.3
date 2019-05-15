@@ -1,0 +1,504 @@
+.TH "lsl::stream_inlet" 3 "Wed May 15 2019" "lslpub_ESP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lsl::stream_inlet
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstream_inlet\fP (const \fBstream_info\fP &\fBinfo\fP, int32_t max_buflen=360, int32_t max_chunklen=0, bool recover=true)"
+.br
+.ti -1c
+.RI "\fB~stream_inlet\fP ()"
+.br
+.ti -1c
+.RI "\fBstream_info\fP \fBinfo\fP (double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "void \fBopen_stream\fP (double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "void \fBclose_stream\fP ()"
+.br
+.ti -1c
+.RI "double \fBtime_correction\fP (double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBtime_correction\fP (double *remote_time, double *uncertainty, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "void \fBset_postprocessing\fP (uint32_t flags=post_ALL)"
+.br
+.ti -1c
+.RI "template<class T , int N> double \fBpull_sample\fP (T sample[N], double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (std::vector< float > &sample, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (std::vector< double > &sample, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (std::vector< long > &sample, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (std::vector< int32_t > &sample, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (std::vector< int16_t > &sample, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (std::vector< char > &sample, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (std::vector< std::string > &sample, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (float *buffer, int32_t buffer_elements, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (double *buffer, int32_t buffer_elements, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (long *buffer, int32_t buffer_elements, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (int32_t *buffer, int32_t buffer_elements, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (int16_t *buffer, int32_t buffer_elements, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (char *buffer, int32_t buffer_elements, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_sample\fP (std::string *buffer, int32_t buffer_elements, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "template<class T > double \fBpull_numeric_struct\fP (T &sample, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "double \fBpull_numeric_raw\fP (void *sample, int32_t buffer_bytes, double timeout=\fBFOREVER\fP)"
+.br
+.ti -1c
+.RI "template<class T > bool \fBpull_chunk\fP (std::vector< std::vector< T > > &chunk, std::vector< double > &timestamps)"
+.br
+.ti -1c
+.RI "template<class T > double \fBpull_chunk\fP (std::vector< std::vector< T > > &chunk)"
+.br
+.ti -1c
+.RI "template<class T > std::vector< std::vector< T > > \fBpull_chunk\fP ()"
+.br
+.ti -1c
+.RI "std::size_t \fBpull_chunk_multiplexed\fP (float *data_buffer, double *timestamp_buffer, std::size_t data_buffer_elements, std::size_t timestamp_buffer_elements, double timeout=0\&.0)"
+.br
+.ti -1c
+.RI "std::size_t \fBpull_chunk_multiplexed\fP (double *data_buffer, double *timestamp_buffer, std::size_t data_buffer_elements, std::size_t timestamp_buffer_elements, double timeout=0\&.0)"
+.br
+.ti -1c
+.RI "std::size_t \fBpull_chunk_multiplexed\fP (long *data_buffer, double *timestamp_buffer, std::size_t data_buffer_elements, std::size_t timestamp_buffer_elements, double timeout=0\&.0)"
+.br
+.ti -1c
+.RI "std::size_t \fBpull_chunk_multiplexed\fP (int32_t *data_buffer, double *timestamp_buffer, std::size_t data_buffer_elements, std::size_t timestamp_buffer_elements, double timeout=0\&.0)"
+.br
+.ti -1c
+.RI "std::size_t \fBpull_chunk_multiplexed\fP (int16_t *data_buffer, double *timestamp_buffer, std::size_t data_buffer_elements, std::size_t timestamp_buffer_elements, double timeout=0\&.0)"
+.br
+.ti -1c
+.RI "std::size_t \fBpull_chunk_multiplexed\fP (char *data_buffer, double *timestamp_buffer, std::size_t data_buffer_elements, std::size_t timestamp_buffer_elements, double timeout=0\&.0)"
+.br
+.ti -1c
+.RI "std::size_t \fBpull_chunk_multiplexed\fP (std::string *data_buffer, double *timestamp_buffer, std::size_t data_buffer_elements, std::size_t timestamp_buffer_elements, double timeout=0\&.0)"
+.br
+.ti -1c
+.RI "template<typename T > bool \fBpull_chunk_multiplexed\fP (std::vector< T > &chunk, std::vector< double > *timestamps=nullptr, double timeout=0\&.0, bool append=false)"
+.br
+.RI "pull_chunk_multiplexed Pull a multiplexed chunk of samples and optionally the sample timestamps from the inlet\&. "
+.ti -1c
+.RI "template<class T > bool \fBpull_chunk_numeric_structs\fP (std::vector< T > &chunk, std::vector< double > &timestamps)"
+.br
+.ti -1c
+.RI "template<class T > double \fBpull_chunk_numeric_structs\fP (std::vector< T > &chunk)"
+.br
+.ti -1c
+.RI "template<class T > std::vector< T > \fBpull_chunk_numeric_structs\fP ()"
+.br
+.ti -1c
+.RI "std::size_t \fBsamples_available\fP ()"
+.br
+.ti -1c
+.RI "bool \fBwas_clock_reset\fP ()"
+.br
+.ti -1c
+.RI "void \fBsmoothing_halftime\fP (float value)"
+.br
+.ti -1c
+.RI "int \fBget_channel_count\fP () const"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "lsl::stream_inlet::stream_inlet (const \fBstream_info\fP & info, int32_t max_buflen = \fC360\fP, int32_t max_chunklen = \fC0\fP, bool recover = \fCtrue\fP)\fC [inline]\fP"
+Construct a new stream inlet from a resolved stream info\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfo\fP A resolved stream info object (as coming from one of the resolver functions)\&. Note: the \fBstream_inlet\fP may also be constructed with a fully-specified \fBstream_info\fP, if the desired channel format and count is already known up-front, but this is strongly discouraged and should only ever be done if there is no time to resolve the stream up-front (e\&.g\&., due to limitations in the client program)\&. 
+.br
+\fImax_buflen\fP Optionally the maximum amount of data to buffer (in seconds if there is a nominal sampling rate, otherwise x100 in samples)\&. Recording applications want to use a fairly large buffer size here, while real-time applications would only buffer as much as they need to perform their next calculation\&. 
+.br
+\fImax_chunklen\fP Optionally the maximum size, in samples, at which chunks are transmitted (the default corresponds to the chunk sizes used by the sender)\&. Recording applications can use a generous size here (leaving it to the network how to pack things), while real-time applications may want a finer (perhaps 1-sample) granularity\&. If left unspecified (=0), the sender determines the chunk granularity\&. 
+.br
+\fIrecover\fP Try to silently recover lost streams that are recoverable (=those that that have a source_id set)\&. In all other cases (recover is false or the stream is not recoverable) functions may throw a \fBlost_error\fP if the stream's source is lost (e\&.g\&., due to an app or computer crash)\&. 
+.RE
+.PP
+
+.SS "lsl::stream_inlet::~stream_inlet ()\fC [inline]\fP"
+Destructor\&. The inlet will automatically disconnect if destroyed\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void lsl::stream_inlet::close_stream ()\fC [inline]\fP"
+Drop the current data stream\&. All samples that are still buffered or in flight will be dropped and transmission and buffering of data for this inlet will be stopped\&. If an application stops being interested in data from a source (temporarily or not) but keeps the outlet alive, it should call \fBclose_stream()\fP to not waste unnecessary system and network resources\&. 
+.SS "\fBstream_info\fP lsl::stream_inlet::info (double timeout = \fC\fBFOREVER\fP\fP)\fC [inline]\fP"
+Retrieve the complete information of the given stream, including the extended description\&. Can be invoked at any time of the stream's lifetime\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP Timeout of the operation (default: no timeout)\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBtimeout_error\fP\fP (if the timeout expires), or \fBlost_error\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "void lsl::stream_inlet::open_stream (double timeout = \fC\fBFOREVER\fP\fP)\fC [inline]\fP"
+Subscribe to the data stream\&. All samples pushed in at the other end from this moment onwards will be queued and eventually be delivered in response to \fBpull_sample()\fP or \fBpull_chunk()\fP calls\&. Pulling a sample without some preceding open_stream is permitted (the stream will then be opened implicitly)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP Optional timeout of the operation (default: no timeout)\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBtimeout_error\fP\fP (if the timeout expires), or \fBlost_error\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "template<class T > bool lsl::stream_inlet::pull_chunk (std::vector< std::vector< T > > & chunk, std::vector< double > & timestamps)\fC [inline]\fP"
+Pull a chunk of samples from the inlet\&. This is the most complete version, returning both the data and a timestamp for each sample\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchunk\fP A vector of vectors to hold the samples\&. 
+.br
+\fItimestamps\fP A vector to hold the time stamps\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if some data was obtained\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "template<class T > double lsl::stream_inlet::pull_chunk (std::vector< std::vector< T > > & chunk)\fC [inline]\fP"
+Pull a chunk of samples from the inlet\&. This version returns only the most recent sample's time stamp\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchunk\fP A vector of vectors to hold the samples\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The time when the most recent sample was captured on the remote machine, or 0\&.0 if no new sample was available\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost) 
+.RE
+.PP
+
+.SS "template<class T > std::vector<std::vector<T> > lsl::stream_inlet::pull_chunk ()\fC [inline]\fP"
+Pull a chunk of samples from the inlet\&. This function does not return time stamps for the samples\&. Invoked as: mychunk = \fBpull_chunk<float>()\fP; 
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of vectors containing the obtained samples; may be empty\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost) 
+.RE
+.PP
+
+.SS "std::size_t lsl::stream_inlet::pull_chunk_multiplexed (float * data_buffer, double * timestamp_buffer, std::size_t data_buffer_elements, std::size_t timestamp_buffer_elements, double timeout = \fC0\&.0\fP)\fC [inline]\fP"
+Pull a chunk of data from the inlet into a pre-allocated buffer\&. This is a high-performance function that performs no memory allocations (useful for very high data rates or on low-powered devices)\&. IMPORTANT: Note that the provided data buffer size is measured in channel values (e\&.g\&., floats) rather than in samples\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata_buffer\fP A pointer to a buffer of data values where the results shall be stored\&. 
+.br
+\fItimestamp_buffer\fP A pointer to a buffer of timestamp values where time stamps shall be stored\&. If this is NULL, no time stamps will be returned\&. 
+.br
+\fIdata_buffer_elements\fP The size of the data buffer, in channel data elements (of type T)\&. Must be a multiple of the stream's channel count\&. 
+.br
+\fItimestamp_buffer_elements\fP The size of the timestamp buffer\&. If a timestamp buffer is provided then this must correspond to the same number of samples as data_buffer_elements\&. 
+.br
+\fItimeout\fP The timeout for this operation, if any\&. When the timeout expires, the function may return before the entire buffer is filled\&. The default value of 0\&.0 will retrieve only data available for immediate pickup\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+data_elements_written Number of channel data elements written to the data buffer\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "template<typename T > bool lsl::stream_inlet::pull_chunk_multiplexed (std::vector< T > & chunk, std::vector< double > * timestamps = \fCnullptr\fP, double timeout = \fC0\&.0\fP, bool append = \fCfalse\fP)\fC [inline]\fP"
+
+.PP
+pull_chunk_multiplexed Pull a multiplexed chunk of samples and optionally the sample timestamps from the inlet\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchunk\fP A vector to hold the multiplexed (Sample 1 Channel 1, S1C2, S2C1, S2C2, S3C1, S3C2, \&.\&.\&.) samples 
+.br
+\fItimestamps\fP A vector to hold the timestamps or nullptr 
+.br
+\fItimeout\fP Time to wait for the first sample\&. The default value of 0\&.0 will not wait for data to arrive, pulling only samples already received\&. 
+.br
+\fIappend\fP (True:) Append data or (false:) clear them first 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if some data was obtained\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "template<class T > bool lsl::stream_inlet::pull_chunk_numeric_structs (std::vector< T > & chunk, std::vector< double > & timestamps)\fC [inline]\fP"
+Pull a chunk of samples from the inlet\&. This is the most complete version, returning both the data and a timestamp for each sample\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchunk\fP A vector of C-style structs to hold the samples\&. 
+.br
+\fItimestamps\fP A vector to hold the time stamps\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if some data was obtained\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost) 
+.RE
+.PP
+
+.SS "template<class T > double lsl::stream_inlet::pull_chunk_numeric_structs (std::vector< T > & chunk)\fC [inline]\fP"
+Pull a chunk of samples from the inlet\&. This version returns only the most recent sample's time stamp\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchunk\fP A vector of C-style structs to hold the samples\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The time when the most recent sample was captured on the remote machine, or 0\&.0 if no new sample was available\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost) 
+.RE
+.PP
+
+.SS "template<class T > std::vector<T> lsl::stream_inlet::pull_chunk_numeric_structs ()\fC [inline]\fP"
+Pull a chunk of samples from the inlet\&. This function does not return time stamps\&. Invoked as: mychunk = \fBpull_chunk<mystruct>()\fP; 
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of C-style structs containing the obtained samples; may be empty\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost) 
+.RE
+.PP
+
+.SS "double lsl::stream_inlet::pull_numeric_raw (void * sample, int32_t buffer_bytes, double timeout = \fC\fBFOREVER\fP\fP)\fC [inline]\fP"
+Pull a sample from the inlet and read it into a pointer to raw data\&. No type checking or conversions are done (not recommended!)\&. Do not use for variable-size/string-formatted streams\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP A pointer to hold the resulting raw sample data\&. 
+.br
+\fIbuffer_bytes\fP The number of bytes allocated in the buffer\&. Note: it is the responsibility of the user to allocate enough memory\&. 
+.br
+\fItimeout\fP The timeout for this operation, if any\&. Use 0\&.0 to make the function non-blocking\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The capture time of the sample on the remote machine, or 0\&.0 if no new sample was available\&. To remap this time stamp to the local clock, add the value returned by \&.\fBtime_correction()\fP to it\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "template<class T > double lsl::stream_inlet::pull_numeric_struct (T & sample, double timeout = \fC\fBFOREVER\fP\fP)\fC [inline]\fP"
+Pull a sample from the inlet and read it into a custom C-style struct\&. Overall size checking but no type checking or conversion are done\&. Do not use for variable-size/string-formatted streams\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsample\fP The raw sample object to hold the data (packed C-style struct)\&. Search for #pragma pack for information on how to pack structs correctly\&. 
+.br
+\fItimeout\fP The timeout for this operation, if any\&. Use 0\&.0 to make the function non-blocking\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The capture time of the sample on the remote machine, or 0\&.0 if no new sample was available\&. To remap this time stamp to the local clock, add the value returned by \&.\fBtime_correction()\fP to it\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "template<class T , int N> double lsl::stream_inlet::pull_sample (T sample[N], double timeout = \fC\fBFOREVER\fP\fP)\fC [inline]\fP"
+Pull a sample from the inlet and read it into an array of values\&. Handles type checking & conversion\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsample\fP An array to hold the resulting values\&. 
+.br
+\fItimeout\fP The timeout for this operation, if any\&. Use 0\&.0 to make the function non-blocking\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The capture time of the sample on the remote machine, or 0\&.0 if no new sample was available\&. To remap this time stamp to the local clock, add the value returned by \&.\fBtime_correction()\fP to it\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "double lsl::stream_inlet::pull_sample (std::vector< float > & sample, double timeout = \fC\fBFOREVER\fP\fP)\fC [inline]\fP"
+Pull a sample from the inlet and read it into a std vector of values\&. Handles type checking & conversion and allocates the necessary memory in the vector if necessary\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsample\fP An STL vector to hold the resulting values\&. 
+.br
+\fItimeout\fP The timeout for this operation, if any\&. Use 0\&.0 to make the function non-blocking\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The capture time of the sample on the remote machine, or 0\&.0 if no new sample was available\&. To remap this time stamp to the local clock, add the value returned by \&.\fBtime_correction()\fP to it\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "double lsl::stream_inlet::pull_sample (float * buffer, int32_t buffer_elements, double timeout = \fC\fBFOREVER\fP\fP)\fC [inline]\fP"
+Pull a sample from the inlet and read it into a pointer to values\&. Handles type checking & conversion\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP A pointer to hold the resulting values\&. 
+.br
+\fIbuffer_elements\fP The number of samples allocated in the buffer\&. Note: it is the responsibility of the user to allocate enough memory\&. 
+.br
+\fItimeout\fP The timeout for this operation, if any\&. Use 0\&.0 to make the function non-blocking\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The capture time of the sample on the remote machine, or 0\&.0 if no new sample was available\&. To remap this time stamp to the local clock, add the value returned by \&.\fBtime_correction()\fP to it\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBlost_error\fP\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "std::size_t lsl::stream_inlet::samples_available ()\fC [inline]\fP"
+Query whether samples are currently available for immediate pickup\&. Note that it is not a good idea to use \fBsamples_available()\fP to determine whether a pull_*() call would block: to be sure, set the pull timeout to 0\&.0 or an acceptably low value\&. If the underlying implementation supports it, the value will be the number of samples available (otherwise it will be 1 or 0)\&. 
+.SS "void lsl::stream_inlet::set_postprocessing (uint32_t flags = \fCpost_ALL\fP)\fC [inline]\fP"
+Set post-processing flags to use\&. By default, the inlet performs NO post-processing and returns the ground-truth time stamps, which can then be manually synchronized using \fBtime_correction()\fP, and then smoothed/dejittered if desired\&. This function allows automating these two and possibly more operations\&. Warning: when you enable this, you will no longer receive or be able to recover the original time stamps\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflags\fP An integer that is the result of bitwise OR'ing one or more options from processing_options_t together (e\&.g\&., post_clocksync|post_dejitter); the default is to enable all options\&. 
+.RE
+.PP
+
+.SS "void lsl::stream_inlet::smoothing_halftime (float value)\fC [inline]\fP"
+Override the half-time (forget factor) of the time-stamp smoothing\&. The default is 90 seconds unless a different value is set in the config file\&. Using a longer window will yield lower jitter in the time stamps, but longer windows will have trouble tracking changes in the clock rate (usually due to temperature changes); the default is able to track changes up to 10 degrees C per minute sufficiently well\&. 
+.SS "double lsl::stream_inlet::time_correction (double timeout = \fC\fBFOREVER\fP\fP)\fC [inline]\fP"
+Retrieve an estimated time correction offset for the given stream\&. The first call to this function takes several milliseconds until a reliable first estimate is obtained\&. Subsequent calls are instantaneous (and rely on periodic background updates)\&. On a well-behaved network, the precision of these estimates should be below 1 ms (empirically it is within +/-0\&.2 ms)\&. To get a measure of whether the network is well-behaved, use the extended prototype and check uncertainty (which maps to round-trip-time)\&. 0\&.2 ms is typical of wired networks\&. 2 ms is typical of wireless networks\&. The number can be much higher on poor networks\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIremote_time\fP The current time of the remote computer that was used to generate this time_correction\&. If desired, the client can fit time_correction vs remote_time to improve the real-time time_correction further\&. 
+.br
+\fIuncertainty\&.\fP The maximum uncertainty of the given time correction\&.  Timeout to acquire the first time-correction estimate (default: no timeout)\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The time correction estimate\&. This is the number that needs to be added to a time stamp that was remotely generated via \fBlsl_local_clock()\fP to map it into the local clock domain of this machine\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBtimeout_error\fP\fP (if the timeout expires), or \fBlost_error\fP (if the stream source has been lost)\&. 
+.RE
+.PP
+
+.SS "bool lsl::stream_inlet::was_clock_reset ()\fC [inline]\fP"
+Query whether the clock was potentially reset since the last call to \fBwas_clock_reset()\fP\&. This is a rarely-used function that is only useful to applications that combine multiple time_correction values to estimate precise clock drift; it allows to tolerate cases where the source machine was hot-swapped or restarted in between two measurements\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for lslpub_ESP from the source code\&.

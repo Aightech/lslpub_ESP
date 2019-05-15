@@ -13,3 +13,9 @@
 !CMakeLists.txt
 !/esp
 !/esp/*
+!/Doxyfile
+
+!/todo.org
+
+!/docs
+!/docs/*

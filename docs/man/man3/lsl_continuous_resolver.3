@@ -1,0 +1,84 @@
+.TH "lsl::continuous_resolver" 3 "Wed May 15 2019" "lslpub_ESP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lsl::continuous_resolver
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lsl_cpp\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcontinuous_resolver\fP (double forget_after=5\&.0)"
+.br
+.ti -1c
+.RI "\fBcontinuous_resolver\fP (const std::string &prop, const std::string &value, double forget_after=5\&.0)"
+.br
+.ti -1c
+.RI "\fBcontinuous_resolver\fP (const std::string &pred, double forget_after=5\&.0)"
+.br
+.ti -1c
+.RI "std::vector< \fBstream_info\fP > \fBresults\fP ()"
+.br
+.ti -1c
+.RI "\fB~continuous_resolver\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A convenience class that resolves streams continuously in the background throughout its lifetime and which can be queried at any time for the set of streams that are currently visible on the network\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "lsl::continuous_resolver::continuous_resolver (double forget_after = \fC5\&.0\fP)\fC [inline]\fP"
+Construct a new \fBcontinuous_resolver\fP that resolves all streams on the network\&. This is analogous to the functionality offered by the free function \fBresolve_streams()\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforget_after\fP When a stream is no longer visible on the network (e\&.g\&., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver\&. 
+.RE
+.PP
+
+.SS "lsl::continuous_resolver::continuous_resolver (const std::string & prop, const std::string & value, double forget_after = \fC5\&.0\fP)\fC [inline]\fP"
+Construct a new \fBcontinuous_resolver\fP that resolves all streams with a specific value for a given property\&. This is analogous to the functionality provided by the free function resolve_stream(prop,value)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprop\fP The \fBstream_info\fP property that should have a specific value (e\&.g\&., 'name', 'type', 'source_id', or 'desc/manufaturer')\&. 
+.br
+\fIvalue\fP The string value that the property should have (e\&.g\&., 'EEG' as the type property)\&. 
+.br
+\fIforget_after\fP When a stream is no longer visible on the network (e\&.g\&., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver\&. 
+.RE
+.PP
+
+.SS "lsl::continuous_resolver::continuous_resolver (const std::string & pred, double forget_after = \fC5\&.0\fP)\fC [inline]\fP"
+Construct a new \fBcontinuous_resolver\fP that resolves all streams that match a given XPath 1\&.0 predicate\&. This is analogous to the functionality provided by the free function resolve_stream(pred)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpred\fP The predicate string, e\&.g\&. 'name='BioSemi'' or 'type='EEG' and starts-with(name,'BioSemi') and count(info/desc/channel)=32' 
+.br
+\fIforget_after\fP When a stream is no longer visible on the network (e\&.g\&., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver\&. 
+.RE
+.PP
+
+.SS "lsl::continuous_resolver::~continuous_resolver ()\fC [inline]\fP"
+Destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector<\fBstream_info\fP> lsl::continuous_resolver::results ()\fC [inline]\fP"
+Obtain the set of currently present streams on the network (i\&.e\&. resolve result)\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of matching stream info objects (excluding their meta-data), any of which can subsequently be used to open an inlet\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for lslpub_ESP from the source code\&.

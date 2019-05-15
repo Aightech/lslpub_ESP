@@ -1,0 +1,1517 @@
+\hypertarget{namespacelsl}{}\section{lsl Namespace Reference}
+\label{namespacelsl}\index{lsl@{lsl}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classlsl_1_1continuous__resolver}{continuous\+\_\+resolver}
+\item 
+class \hyperlink{classlsl_1_1lost__error}{lost\+\_\+error}
+\begin{DoxyCompactList}\small\item\em Exception class that indicates that a stream inlet\textquotesingle{}s source has been irrecoverably lost. \end{DoxyCompactList}\item 
+class \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}
+\item 
+class \hyperlink{classlsl_1_1stream__inlet}{stream\+\_\+inlet}
+\item 
+class \hyperlink{classlsl_1_1stream__outlet}{stream\+\_\+outlet}
+\item 
+class \hyperlink{classlsl_1_1timeout__error}{timeout\+\_\+error}
+\begin{DoxyCompactList}\small\item\em Exception class that indicates that an operation failed due to a timeout. \end{DoxyCompactList}\item 
+class \hyperlink{classlsl_1_1xml__element}{xml\+\_\+element}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct lsl\+\_\+streaminfo\+\_\+struct\+\_\+ $\ast$ \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}
+\item 
+typedef struct lsl\+\_\+outlet\+\_\+struct\+\_\+ $\ast$ \hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet}
+\item 
+typedef struct lsl\+\_\+inlet\+\_\+struct\+\_\+ $\ast$ \hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}
+\item 
+typedef struct lsl\+\_\+xml\+\_\+ptr\+\_\+struct\+\_\+ $\ast$ \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}
+\item 
+typedef struct lsl\+\_\+continuous\+\_\+resolver\+\_\+ $\ast$ \hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacelsl_af188e978739868560b53dbf0ddd58e66}{lsl\+\_\+channel\+\_\+format\+\_\+t} \{ \newline
+{\bfseries cft\+\_\+float32} = 1, 
+{\bfseries cft\+\_\+double64} = 2, 
+{\bfseries cft\+\_\+string} = 3, 
+{\bfseries cft\+\_\+int32} = 4, 
+\newline
+{\bfseries cft\+\_\+int16} = 5, 
+{\bfseries cft\+\_\+int8} = 6, 
+{\bfseries cft\+\_\+int64} = 7, 
+{\bfseries cft\+\_\+undefined} = 0
+ \}
+\item 
+enum \hyperlink{namespacelsl_a71fa5faeecfdd863828bdcd4117e736b}{lsl\+\_\+processing\+\_\+options\+\_\+t} \{ \newline
+{\bfseries proc\+\_\+none} = 0, 
+{\bfseries proc\+\_\+clocksync} = 1, 
+{\bfseries proc\+\_\+dejitter} = 2, 
+{\bfseries proc\+\_\+monotonize} = 4, 
+\newline
+{\bfseries proc\+\_\+threadsafe} = 8, 
+{\bfseries proc\+\_\+\+A\+LL} = 1$\vert$2$\vert$4$\vert$8
+ \}
+\item 
+enum \hyperlink{namespacelsl_a7e674c7665887951b952c463258451a9}{lsl\+\_\+error\+\_\+code\+\_\+t} \{ \newline
+{\bfseries lsl\+\_\+no\+\_\+error} = 0, 
+{\bfseries lsl\+\_\+timeout\+\_\+error} = -\/1, 
+{\bfseries lsl\+\_\+lost\+\_\+error} = -\/2, 
+{\bfseries lsl\+\_\+argument\+\_\+error} = -\/3, 
+\newline
+{\bfseries lsl\+\_\+internal\+\_\+error} = -\/4
+ \}
+\item 
+enum \hyperlink{namespacelsl_a28d50dae6fd82eea8893ce3d63ccd46c}{channel\+\_\+format\+\_\+t} \{ \newline
+{\bfseries cf\+\_\+float32} = 1, 
+{\bfseries cf\+\_\+double64} = 2, 
+{\bfseries cf\+\_\+string} = 3, 
+{\bfseries cf\+\_\+int32} = 4, 
+\newline
+{\bfseries cf\+\_\+int16} = 5, 
+{\bfseries cf\+\_\+int8} = 6, 
+{\bfseries cf\+\_\+int64} = 7, 
+{\bfseries cf\+\_\+undefined} = 0
+ \}
+\item 
+enum \hyperlink{namespacelsl_aaa1cffa7d29bb2756522bc2bb069e310}{processing\+\_\+options\+\_\+t} \{ \newline
+{\bfseries post\+\_\+none} = 0, 
+{\bfseries post\+\_\+clocksync} = 1, 
+{\bfseries post\+\_\+dejitter} = 2, 
+{\bfseries post\+\_\+monotonize} = 4, 
+\newline
+{\bfseries post\+\_\+threadsafe} = 8, 
+{\bfseries post\+\_\+\+A\+LL} = 1$\vert$2$\vert$4$\vert$8
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a9695264d0e763474d352767702b38222}{lsl\+\_\+protocol\+\_\+version} ()
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_aa706e1332352902a9b531a88af671896}{lsl\+\_\+library\+\_\+version} ()
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_a4e35f8426ffee9dbe7139dbe404e0442}{lsl\+\_\+library\+\_\+info} ()
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double \hyperlink{namespacelsl_a475274f88a060924c9bd1b38879ec63a}{lsl\+\_\+local\+\_\+clock} ()
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a075ab08464c90d97b8f081d89ea889f2}{lsl\+\_\+resolve\+\_\+all} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} $\ast$buffer, uint32\+\_\+t buffer\+\_\+elements, double wait\+\_\+time)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a66563e2290de3b056a5480ced8596ec7}{lsl\+\_\+resolve\+\_\+byprop} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} $\ast$buffer, uint32\+\_\+t buffer\+\_\+elements, const char $\ast$prop, const char $\ast$value, int32\+\_\+t minimum, double timeout)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a11a5ef91d32961e0ad1d44dbef948399}{lsl\+\_\+resolve\+\_\+bypred} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} $\ast$buffer, uint32\+\_\+t buffer\+\_\+elements, const char $\ast$pred, int32\+\_\+t minimum, double timeout)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_ac517533eaabb224fd2f893e1f4274d82}{lsl\+\_\+destroy\+\_\+string} (char $\ast$s)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} \hyperlink{namespacelsl_abf20c6316cd58a713a674ef2213914d2}{lsl\+\_\+create\+\_\+streaminfo} (const char $\ast$name, const char $\ast$type, int32\+\_\+t channel\+\_\+count, double nominal\+\_\+srate, \hyperlink{namespacelsl_af188e978739868560b53dbf0ddd58e66}{lsl\+\_\+channel\+\_\+format\+\_\+t} channel\+\_\+format, const char $\ast$source\+\_\+id)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_afc7ae71903a0c20763937739fa62df32}{lsl\+\_\+destroy\+\_\+streaminfo} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} \hyperlink{namespacelsl_a354a91fa3a4c87cdf179443650425390}{lsl\+\_\+copy\+\_\+streaminfo} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_ad356f55776a73d03998837c5c32fc95e}{lsl\+\_\+get\+\_\+name} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_a417e01d26d64718513bc0ef2c58acf89}{lsl\+\_\+get\+\_\+type} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a40acd87a21d3c91a524bd72012dc3328}{lsl\+\_\+get\+\_\+channel\+\_\+count} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double \hyperlink{namespacelsl_a17e4e6d432dc0b7280df4b5365c7da46}{lsl\+\_\+get\+\_\+nominal\+\_\+srate} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_af188e978739868560b53dbf0ddd58e66}{lsl\+\_\+channel\+\_\+format\+\_\+t} \hyperlink{namespacelsl_a70c26257a8f3042084140a85a867a300}{lsl\+\_\+get\+\_\+channel\+\_\+format} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_ad2987f3c32e0edae147498a8870a3215}{lsl\+\_\+get\+\_\+source\+\_\+id} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_ab889dd6f9a5fc6d6cd01a0b3dc153387}{lsl\+\_\+get\+\_\+version} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double \hyperlink{namespacelsl_aded8755dc0f65d8219449ef37ba7f6c5}{lsl\+\_\+get\+\_\+created\+\_\+at} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_a6e18a9b1c544932e96179a44bb1f31ec}{lsl\+\_\+get\+\_\+uid} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_ae28332bda70380cfd546fc158cd6f009}{lsl\+\_\+get\+\_\+session\+\_\+id} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_ab74235be779da7e0cdcfd59b498bdf3f}{lsl\+\_\+get\+\_\+hostname} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_aeb428e46e46db8bd534e45ed8a76a120}{lsl\+\_\+get\+\_\+desc} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI char $\ast$ \hyperlink{namespacelsl_ad1a9b14dccf565e5ecb79c093fe0fd39}{lsl\+\_\+get\+\_\+xml} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\item 
+\mbox{\Hypertarget{namespacelsl_aa11d6865aa57caf51f5d13c66a785b30}\label{namespacelsl_aa11d6865aa57caf51f5d13c66a785b30}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_aa11d6865aa57caf51f5d13c66a785b30}{lsl\+\_\+get\+\_\+channel\+\_\+bytes} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\begin{DoxyCompactList}\small\item\em Number of bytes occupied by a channel (0 for string-\/typed channels). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacelsl_a26e8a9f4b8c7ee128362aadbc688dab0}\label{namespacelsl_a26e8a9f4b8c7ee128362aadbc688dab0}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a26e8a9f4b8c7ee128362aadbc688dab0}{lsl\+\_\+get\+\_\+sample\+\_\+bytes} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info)
+\begin{DoxyCompactList}\small\item\em Number of bytes occupied by a sample (0 for string-\/typed channels). \end{DoxyCompactList}\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int \hyperlink{namespacelsl_a5c10ba1783b34bd0b3f048ac4cb5fe5e}{lsl\+\_\+stream\+\_\+info\+\_\+matches\+\_\+query} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info, const char $\ast$query)
+\item 
+\mbox{\Hypertarget{namespacelsl_a2cf7fb16bf4029ca632fa5dab930de47}\label{namespacelsl_a2cf7fb16bf4029ca632fa5dab930de47}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} \hyperlink{namespacelsl_a2cf7fb16bf4029ca632fa5dab930de47}{lsl\+\_\+streaminfo\+\_\+from\+\_\+xml} (const char $\ast$xml)
+\begin{DoxyCompactList}\small\item\em Create a streaminfo object from an X\+ML representation. \end{DoxyCompactList}\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} \hyperlink{namespacelsl_a4c92219e56eec896266a36ae58426d4b}{lsl\+\_\+create\+\_\+outlet} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info, int32\+\_\+t chunk\+\_\+size, int32\+\_\+t max\+\_\+buffered)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_aa39980eac53711feece8bfc3b50d2b24}{lsl\+\_\+destroy\+\_\+outlet} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a001aa3637915875c44c379c07c55fb3a}{lsl\+\_\+push\+\_\+sample\+\_\+f} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const float $\ast$data)
+\item 
+\mbox{\Hypertarget{namespacelsl_ade95641430ee28ac2bbcf888f572d34f}\label{namespacelsl_ade95641430ee28ac2bbcf888f572d34f}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+ft} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const float $\ast$data, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a6434485fd96e3260939bfe6fea2b317e}\label{namespacelsl_a6434485fd96e3260939bfe6fea2b317e}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+ftp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const float $\ast$data, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_ac7d63bbdbdd3b0ec26d49b22b5858d8e}\label{namespacelsl_ac7d63bbdbdd3b0ec26d49b22b5858d8e}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+d} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const double $\ast$data)
+\item 
+\mbox{\Hypertarget{namespacelsl_a6877d8a4ebbe802a123a09505a106f3f}\label{namespacelsl_a6877d8a4ebbe802a123a09505a106f3f}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+dt} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const double $\ast$data, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_aa6064248da7a261b46185ec9ffd12ba3}\label{namespacelsl_aa6064248da7a261b46185ec9ffd12ba3}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+dtp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const double $\ast$data, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a44dd3e59bb5d7e95b9ffa60032207457}\label{namespacelsl_a44dd3e59bb5d7e95b9ffa60032207457}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+l} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const long $\ast$data)
+\item 
+\mbox{\Hypertarget{namespacelsl_ad257a8fe8aee5d302292dd40d93fe335}\label{namespacelsl_ad257a8fe8aee5d302292dd40d93fe335}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+lt} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const long $\ast$data, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a4839e55343dd8c3aea6c8e2a65d706ed}\label{namespacelsl_a4839e55343dd8c3aea6c8e2a65d706ed}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+ltp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const long $\ast$data, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a5e6e682a09b4c90732e4fc631d643384}\label{namespacelsl_a5e6e682a09b4c90732e4fc631d643384}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+i} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int32\+\_\+t $\ast$data)
+\item 
+\mbox{\Hypertarget{namespacelsl_a87f61ecb0058ef8cd14a84693770b51d}\label{namespacelsl_a87f61ecb0058ef8cd14a84693770b51d}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+it} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int32\+\_\+t $\ast$data, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_aa0f3b0ccc233ebed00178e189c4678af}\label{namespacelsl_aa0f3b0ccc233ebed00178e189c4678af}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+itp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int32\+\_\+t $\ast$data, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a8d80592d7fd643d64533ef83f6808743}\label{namespacelsl_a8d80592d7fd643d64533ef83f6808743}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+s} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int16\+\_\+t $\ast$data)
+\item 
+\mbox{\Hypertarget{namespacelsl_a9a22e090bfa2e61ec19d70dc9bb5908d}\label{namespacelsl_a9a22e090bfa2e61ec19d70dc9bb5908d}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+st} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int16\+\_\+t $\ast$data, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a916ebe3afa6e7b83d670211c7320df51}\label{namespacelsl_a916ebe3afa6e7b83d670211c7320df51}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+stp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int16\+\_\+t $\ast$data, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_aff896f8925d3453857deabc1f9cfd24a}\label{namespacelsl_aff896f8925d3453857deabc1f9cfd24a}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+c} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$data)
+\item 
+\mbox{\Hypertarget{namespacelsl_a321429ed29e2b8b944f7724361628ba9}\label{namespacelsl_a321429ed29e2b8b944f7724361628ba9}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+ct} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$data, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a7127acf0d2106d5ae673489510845f58}\label{namespacelsl_a7127acf0d2106d5ae673489510845f58}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+ctp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$data, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a3da2b3303768776977e0d621e2990c0e}\label{namespacelsl_a3da2b3303768776977e0d621e2990c0e}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+str} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data)
+\item 
+\mbox{\Hypertarget{namespacelsl_a634f8191b28e9cb9b6edcf01aaead377}\label{namespacelsl_a634f8191b28e9cb9b6edcf01aaead377}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+strt} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_aeb9537e1d060020c99c47371b07bcb24}\label{namespacelsl_aeb9537e1d060020c99c47371b07bcb24}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+strtp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a77dbefbfa9fc565f9ead1db3574ef001}\label{namespacelsl_a77dbefbfa9fc565f9ead1db3574ef001}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+buf} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, const uint32\+\_\+t $\ast$lengths)
+\item 
+\mbox{\Hypertarget{namespacelsl_ace903fc8ac868a1afedf98090f5c5b4c}\label{namespacelsl_ace903fc8ac868a1afedf98090f5c5b4c}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+buft} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, const uint32\+\_\+t $\ast$lengths, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a62d7f7be3db90336d61e89633c4b1a5e}\label{namespacelsl_a62d7f7be3db90336d61e89633c4b1a5e}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+buftp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, const uint32\+\_\+t $\ast$lengths, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a25ee57785d5ab7143605ee9f59c1a0cf}\label{namespacelsl_a25ee57785d5ab7143605ee9f59c1a0cf}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+v} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const void $\ast$data)
+\item 
+\mbox{\Hypertarget{namespacelsl_a8032f4283b186f0f8b8e657f6642e062}\label{namespacelsl_a8032f4283b186f0f8b8e657f6642e062}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+vt} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const void $\ast$data, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a750c5759d30e4e0a47223c7048bfa4ca}\label{namespacelsl_a750c5759d30e4e0a47223c7048bfa4ca}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+sample\+\_\+vtp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const void $\ast$data, double timestamp, int32\+\_\+t pushthrough)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_abaf77814f92eec3728670d14195b460b}{lsl\+\_\+push\+\_\+chunk\+\_\+f} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const float $\ast$data, unsigned long data\+\_\+elements)
+\item 
+\mbox{\Hypertarget{namespacelsl_a115ed5e462c162787436cd9800dbcb7e}\label{namespacelsl_a115ed5e462c162787436cd9800dbcb7e}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ft} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const float $\ast$data, unsigned long data\+\_\+elements, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_adf8f3e407c2b25a0e68aaf4e27df742d}\label{namespacelsl_adf8f3e407c2b25a0e68aaf4e27df742d}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ftp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const float $\ast$data, unsigned long data\+\_\+elements, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_aee7313f1b6a8c88e7bdfc5f133986aaa}\label{namespacelsl_aee7313f1b6a8c88e7bdfc5f133986aaa}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ftn} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const float $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps)
+\item 
+\mbox{\Hypertarget{namespacelsl_a5bb763124a2b2e74423b5c382a600b30}\label{namespacelsl_a5bb763124a2b2e74423b5c382a600b30}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ftnp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const float $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_aba0e49750a9d56a0058b4287652043b1}\label{namespacelsl_aba0e49750a9d56a0058b4287652043b1}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+d} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const double $\ast$data, unsigned long data\+\_\+elements)
+\item 
+\mbox{\Hypertarget{namespacelsl_ae0c9d5ce50a5e9c7cd612063b82c7e6b}\label{namespacelsl_ae0c9d5ce50a5e9c7cd612063b82c7e6b}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+dt} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const double $\ast$data, unsigned long data\+\_\+elements, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_afdd8325060d14312cb340bc2edcac10a}\label{namespacelsl_afdd8325060d14312cb340bc2edcac10a}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+dtp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const double $\ast$data, unsigned long data\+\_\+elements, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_ae0a8ffad75240ca3d702944ebf7d7d53}\label{namespacelsl_ae0a8ffad75240ca3d702944ebf7d7d53}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+dtn} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const double $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps)
+\item 
+\mbox{\Hypertarget{namespacelsl_a8a0e5cfc6b88e4dae3d4abd97ac47c38}\label{namespacelsl_a8a0e5cfc6b88e4dae3d4abd97ac47c38}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+dtnp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const double $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a68403934d1fdace37348c95f54367bc2}\label{namespacelsl_a68403934d1fdace37348c95f54367bc2}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+l} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const long $\ast$data, unsigned long data\+\_\+elements)
+\item 
+\mbox{\Hypertarget{namespacelsl_a55622b4fc53149f986414f7642baf00a}\label{namespacelsl_a55622b4fc53149f986414f7642baf00a}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+lt} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const long $\ast$data, unsigned long data\+\_\+elements, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a1a6be2ac3bc8a1df1f4c08d0b3a79445}\label{namespacelsl_a1a6be2ac3bc8a1df1f4c08d0b3a79445}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ltp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const long $\ast$data, unsigned long data\+\_\+elements, double timestamp, int pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a93cfea6f1ecc01606e6e4f37bba7103f}\label{namespacelsl_a93cfea6f1ecc01606e6e4f37bba7103f}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ltn} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const long $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps)
+\item 
+\mbox{\Hypertarget{namespacelsl_aa172a29d0976aee8d41306d7b8b53231}\label{namespacelsl_aa172a29d0976aee8d41306d7b8b53231}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ltnp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const long $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps, int pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a096b23637c04d20bcaea1a92bc438845}\label{namespacelsl_a096b23637c04d20bcaea1a92bc438845}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+i} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int32\+\_\+t $\ast$data, unsigned long data\+\_\+elements)
+\item 
+\mbox{\Hypertarget{namespacelsl_aede257c8d3911fbc26329bd4af8bcc9a}\label{namespacelsl_aede257c8d3911fbc26329bd4af8bcc9a}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+it} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int32\+\_\+t $\ast$data, unsigned long data\+\_\+elements, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a38439e357a8d6c984ffcfd9e22596ec1}\label{namespacelsl_a38439e357a8d6c984ffcfd9e22596ec1}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+itp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int32\+\_\+t $\ast$data, unsigned long data\+\_\+elements, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a0ea52f33684ceab15ad7244636291ddd}\label{namespacelsl_a0ea52f33684ceab15ad7244636291ddd}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+itn} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int32\+\_\+t $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps)
+\item 
+\mbox{\Hypertarget{namespacelsl_a9102a7929e172f9a42e51211139d691f}\label{namespacelsl_a9102a7929e172f9a42e51211139d691f}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+itnp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int32\+\_\+t $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_ac2e4e87bd196fe5469934eaf87ecdaa2}\label{namespacelsl_ac2e4e87bd196fe5469934eaf87ecdaa2}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+s} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int16\+\_\+t $\ast$data, unsigned long data\+\_\+elements)
+\item 
+\mbox{\Hypertarget{namespacelsl_a6d02c87538ca2e49831fefc79a4ef751}\label{namespacelsl_a6d02c87538ca2e49831fefc79a4ef751}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+st} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int16\+\_\+t $\ast$data, unsigned long data\+\_\+elements, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a8de67854b1d0c9de42e3e69997f68d0c}\label{namespacelsl_a8de67854b1d0c9de42e3e69997f68d0c}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+stp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int16\+\_\+t $\ast$data, unsigned long data\+\_\+elements, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a66784045ca9dec23b491f56474009de4}\label{namespacelsl_a66784045ca9dec23b491f56474009de4}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+stn} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int16\+\_\+t $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps)
+\item 
+\mbox{\Hypertarget{namespacelsl_aee4448b6c1239e14f9212700c828ca5b}\label{namespacelsl_aee4448b6c1239e14f9212700c828ca5b}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+stnp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const int16\+\_\+t $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a3dd3622f5a0fcdedbc7bf4223a08ba01}\label{namespacelsl_a3dd3622f5a0fcdedbc7bf4223a08ba01}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+c} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$data, unsigned long data\+\_\+elements)
+\item 
+\mbox{\Hypertarget{namespacelsl_a9bad246099db9f07ccc795d14709eed7}\label{namespacelsl_a9bad246099db9f07ccc795d14709eed7}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ct} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$data, unsigned long data\+\_\+elements, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_ad8287dab0124b1f1d8a682e914116550}\label{namespacelsl_ad8287dab0124b1f1d8a682e914116550}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ctp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$data, unsigned long data\+\_\+elements, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a2a72461381a3cfa39a33dc07312a72a6}\label{namespacelsl_a2a72461381a3cfa39a33dc07312a72a6}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ctn} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps)
+\item 
+\mbox{\Hypertarget{namespacelsl_a1ce559595e2b4ac431bda67fc49ec102}\label{namespacelsl_a1ce559595e2b4ac431bda67fc49ec102}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+ctnp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_af3a72a206c0eac2ac180b31e5fbaf28f}\label{namespacelsl_af3a72a206c0eac2ac180b31e5fbaf28f}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+str} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, unsigned long data\+\_\+elements)
+\item 
+\mbox{\Hypertarget{namespacelsl_a3327c2e5a83c90e02270743916c302e3}\label{namespacelsl_a3327c2e5a83c90e02270743916c302e3}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+strt} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, unsigned long data\+\_\+elements, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_a9317d0fe8f576fb80e58e362a39e12e1}\label{namespacelsl_a9317d0fe8f576fb80e58e362a39e12e1}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+strtp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, unsigned long data\+\_\+elements, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_abbdff3e2051e7707fe9d3f2631fd5d18}\label{namespacelsl_abbdff3e2051e7707fe9d3f2631fd5d18}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+strtn} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps)
+\item 
+\mbox{\Hypertarget{namespacelsl_afcc56fcb63fe7c9f29f658c40f8e62f2}\label{namespacelsl_afcc56fcb63fe7c9f29f658c40f8e62f2}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+strtnp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, unsigned long data\+\_\+elements, const double $\ast$timestamps, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_a1754aad36f1585fee58312ee678ae43b}\label{namespacelsl_a1754aad36f1585fee58312ee678ae43b}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+buf} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, const uint32\+\_\+t $\ast$lengths, unsigned long data\+\_\+elements)
+\item 
+\mbox{\Hypertarget{namespacelsl_a9689fe506da978719b80fe5ee61d355b}\label{namespacelsl_a9689fe506da978719b80fe5ee61d355b}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+buft} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, const uint32\+\_\+t $\ast$lengths, unsigned long data\+\_\+elements, double timestamp)
+\item 
+\mbox{\Hypertarget{namespacelsl_ab45337e9fc47d0517a6250e2e6931d38}\label{namespacelsl_ab45337e9fc47d0517a6250e2e6931d38}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+buftp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, const uint32\+\_\+t $\ast$lengths, unsigned long data\+\_\+elements, double timestamp, int32\+\_\+t pushthrough)
+\item 
+\mbox{\Hypertarget{namespacelsl_af90cd85058ec6f055bd1f59f8271c5c4}\label{namespacelsl_af90cd85058ec6f055bd1f59f8271c5c4}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+buftn} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, const uint32\+\_\+t $\ast$lengths, unsigned long data\+\_\+elements, const double $\ast$timestamps)
+\item 
+\mbox{\Hypertarget{namespacelsl_a231f423627ce9752d7877dfacf096b0f}\label{namespacelsl_a231f423627ce9752d7877dfacf096b0f}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t {\bfseries lsl\+\_\+push\+\_\+chunk\+\_\+buftnp} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, const char $\ast$$\ast$data, const uint32\+\_\+t $\ast$lengths, unsigned long data\+\_\+elements, const double $\ast$timestamps, int32\+\_\+t pushthrough)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a675de9cdbbd01dee30ce59e49f4bdf3a}{lsl\+\_\+have\+\_\+consumers} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a0d69686f148209d1750e284a93942f19}{lsl\+\_\+wait\+\_\+for\+\_\+consumers} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out, double timeout)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} \hyperlink{namespacelsl_add36e044b2c854296d26dbe429ef0445}{lsl\+\_\+get\+\_\+info} (\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} out)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} \hyperlink{namespacelsl_a260c98cb095aefdb3232cbc38472abde}{lsl\+\_\+create\+\_\+inlet} (\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} info, int32\+\_\+t max\+\_\+buflen, int32\+\_\+t max\+\_\+chunklen, int32\+\_\+t recover)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_a079daffcce73f1ed31bd52d681019029}{lsl\+\_\+destroy\+\_\+inlet} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} \hyperlink{namespacelsl_a6a303d699340f95ed7b68d7bf129fd45}{lsl\+\_\+get\+\_\+fullinfo} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_ad72aa9d01ea937b413adf615322ce9a7}{lsl\+\_\+open\+\_\+stream} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_a3adefb15364dacbfa8f46b5f554ed4ac}{lsl\+\_\+close\+\_\+stream} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double \hyperlink{namespacelsl_a4a017b7c6d6fbe056b5394b1edff0994}{lsl\+\_\+time\+\_\+correction} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_aaa10a13a7b2aced436ba8a14c21af2bb}\label{namespacelsl_aaa10a13a7b2aced436ba8a14c21af2bb}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double {\bfseries lsl\+\_\+time\+\_\+correction\+\_\+ex} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, double $\ast$remote\+\_\+time, double $\ast$uncertainty, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a36fe6c26cb8c696b658c87490d4c1059}{lsl\+\_\+set\+\_\+postprocessing} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, uint32\+\_\+t flags)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double \hyperlink{namespacelsl_a56fc49301c94b76f1c89ab041d26bef1}{lsl\+\_\+pull\+\_\+sample\+\_\+f} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, float $\ast$buffer, int32\+\_\+t buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_a958abfca3463aaf5703230b472e8e988}\label{namespacelsl_a958abfca3463aaf5703230b472e8e988}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double {\bfseries lsl\+\_\+pull\+\_\+sample\+\_\+d} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, double $\ast$buffer, int32\+\_\+t buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_a7572c63f7c2569ddffb3ac2d8c16bd1e}\label{namespacelsl_a7572c63f7c2569ddffb3ac2d8c16bd1e}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double {\bfseries lsl\+\_\+pull\+\_\+sample\+\_\+l} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, long $\ast$buffer, int buffer\+\_\+elements, double timeout, int $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_a201e5c7d48e0b815c30bb155f116eb42}\label{namespacelsl_a201e5c7d48e0b815c30bb155f116eb42}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double {\bfseries lsl\+\_\+pull\+\_\+sample\+\_\+i} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, int32\+\_\+t $\ast$buffer, int32\+\_\+t buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_a9c1676b5e509980eeb5065a2c84144c4}\label{namespacelsl_a9c1676b5e509980eeb5065a2c84144c4}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double {\bfseries lsl\+\_\+pull\+\_\+sample\+\_\+s} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, int16\+\_\+t $\ast$buffer, int32\+\_\+t buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_aaa7da3f1fd36b31afafbfaf5eac09fbb}\label{namespacelsl_aaa7da3f1fd36b31afafbfaf5eac09fbb}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double {\bfseries lsl\+\_\+pull\+\_\+sample\+\_\+c} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, char $\ast$buffer, int32\+\_\+t buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_a3fd4085148eab55ea6a918dc151869a3}\label{namespacelsl_a3fd4085148eab55ea6a918dc151869a3}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double {\bfseries lsl\+\_\+pull\+\_\+sample\+\_\+str} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, char $\ast$$\ast$buffer, int32\+\_\+t buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double \hyperlink{namespacelsl_aeb6a1e871e465e4859292bc46a2e5bbd}{lsl\+\_\+pull\+\_\+sample\+\_\+buf} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, char $\ast$$\ast$buffer, uint32\+\_\+t $\ast$buffer\+\_\+lengths, int32\+\_\+t buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double \hyperlink{namespacelsl_a4b9141b42af68f2224c1f72044bf6018}{lsl\+\_\+pull\+\_\+sample\+\_\+v} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, void $\ast$buffer, int32\+\_\+t buffer\+\_\+bytes, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long \hyperlink{namespacelsl_a59b21970f29b294c8d4d43be06335cba}{lsl\+\_\+pull\+\_\+chunk\+\_\+f} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, float $\ast$data\+\_\+buffer, double $\ast$timestamp\+\_\+buffer, unsigned long data\+\_\+buffer\+\_\+elements, unsigned long timestamp\+\_\+buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_ad8e4cbb24fb74cd532abf50fe3a8d571}\label{namespacelsl_ad8e4cbb24fb74cd532abf50fe3a8d571}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long {\bfseries lsl\+\_\+pull\+\_\+chunk\+\_\+d} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, double $\ast$data\+\_\+buffer, double $\ast$timestamp\+\_\+buffer, unsigned long data\+\_\+buffer\+\_\+elements, unsigned long timestamp\+\_\+buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_a1f78178ddd5cb824e36d4322677bbfe9}\label{namespacelsl_a1f78178ddd5cb824e36d4322677bbfe9}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long {\bfseries lsl\+\_\+pull\+\_\+chunk\+\_\+l} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, long $\ast$data\+\_\+buffer, double $\ast$timestamp\+\_\+buffer, unsigned long data\+\_\+buffer\+\_\+elements, unsigned long timestamp\+\_\+buffer\+\_\+elements, double timeout, int $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_a5f10ff6b4a4ff08c0e9f78d41c495c60}\label{namespacelsl_a5f10ff6b4a4ff08c0e9f78d41c495c60}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long {\bfseries lsl\+\_\+pull\+\_\+chunk\+\_\+i} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, int32\+\_\+t $\ast$data\+\_\+buffer, double $\ast$timestamp\+\_\+buffer, unsigned long data\+\_\+buffer\+\_\+elements, unsigned long timestamp\+\_\+buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_a577a886ca87effb6b93a295466b9c933}\label{namespacelsl_a577a886ca87effb6b93a295466b9c933}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long {\bfseries lsl\+\_\+pull\+\_\+chunk\+\_\+s} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, int16\+\_\+t $\ast$data\+\_\+buffer, double $\ast$timestamp\+\_\+buffer, unsigned long data\+\_\+buffer\+\_\+elements, unsigned long timestamp\+\_\+buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_ad160ae0261a0b604b5ebae8a7cf30f00}\label{namespacelsl_ad160ae0261a0b604b5ebae8a7cf30f00}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long {\bfseries lsl\+\_\+pull\+\_\+chunk\+\_\+c} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, char $\ast$data\+\_\+buffer, double $\ast$timestamp\+\_\+buffer, unsigned long data\+\_\+buffer\+\_\+elements, unsigned long timestamp\+\_\+buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+\mbox{\Hypertarget{namespacelsl_aeac6202687776ae5d0155226869237d0}\label{namespacelsl_aeac6202687776ae5d0155226869237d0}} 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long {\bfseries lsl\+\_\+pull\+\_\+chunk\+\_\+str} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, char $\ast$$\ast$data\+\_\+buffer, double $\ast$timestamp\+\_\+buffer, unsigned long data\+\_\+buffer\+\_\+elements, unsigned long timestamp\+\_\+buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long \hyperlink{namespacelsl_a90d24057f9ba37f33d3539666af27082}{lsl\+\_\+pull\+\_\+chunk\+\_\+buf} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, char $\ast$$\ast$data\+\_\+buffer, uint32\+\_\+t $\ast$lengths\+\_\+buffer, double $\ast$timestamp\+\_\+buffer, unsigned long data\+\_\+buffer\+\_\+elements, unsigned long timestamp\+\_\+buffer\+\_\+elements, double timeout, int32\+\_\+t $\ast$ec)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI uint32\+\_\+t \hyperlink{namespacelsl_ab5511189be4bb2c887fd5e0bd0ab9b00}{lsl\+\_\+samples\+\_\+available} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI uint32\+\_\+t \hyperlink{namespacelsl_a3b98f7920895623517758ed1500bcad3}{lsl\+\_\+was\+\_\+clock\+\_\+reset} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a71b6f856d04b6519ab6b249499ad4e91}{lsl\+\_\+smoothing\+\_\+halftime} (\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} in, float value)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a00b272ef8da2c1f1a6ea440219728c32}{lsl\+\_\+first\+\_\+child} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_aeb717da468fa8bfc541af78b59052e6d}{lsl\+\_\+last\+\_\+child} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_ad719cddda958c613ff328245dc5b4277}{lsl\+\_\+next\+\_\+sibling} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a61acf3af105e47f718bbc312766caf44}{lsl\+\_\+previous\+\_\+sibling} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_aa8decbe6cf9d9f1c6358af2d6a475bd5}{lsl\+\_\+parent} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a023258f274202055146894d26e3cf2ad}{lsl\+\_\+child} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_ac898e643d9e43785030c3e1a7524ea70}{lsl\+\_\+next\+\_\+sibling\+\_\+n} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a1b42f95654ea48c92a15bd077e6c73ac}{lsl\+\_\+previous\+\_\+sibling\+\_\+n} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_aa8e3affdd320f70d77b87262d508ba58}{lsl\+\_\+empty} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a423fa21a73fa370762fe168081f12a41}{lsl\+\_\+is\+\_\+text} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_a55761eae47f0963850f6077b4c61701e}{lsl\+\_\+name} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_a06b7b1f52525d931c57be7eb1216f50a}{lsl\+\_\+value} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_aa6a774c3c6e431610a98be1b83bc8a3b}{lsl\+\_\+child\+\_\+value} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char $\ast$ \hyperlink{namespacelsl_ac70e2fc6f64715cead7b4b8e776cc6e7}{lsl\+\_\+child\+\_\+value\+\_\+n} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a3d9fb84fd68c84dd8692e25f1461a894}{lsl\+\_\+append\+\_\+child\+\_\+value} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name, const char $\ast$value)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a40369db591e0a19927d76b6d5c811a94}{lsl\+\_\+prepend\+\_\+child\+\_\+value} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name, const char $\ast$value)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_a637223b4077e6cfa0392d02f9f274ba7}{lsl\+\_\+set\+\_\+child\+\_\+value} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name, const char $\ast$value)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_af13c49d3abab79ae9dd6d94ca7cdc877}{lsl\+\_\+set\+\_\+name} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$rhs)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_ab072800f46e425c22568529419a3301b}{lsl\+\_\+set\+\_\+value} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$rhs)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a4e7b789b1a631d207683ba6fd821571f}{lsl\+\_\+append\+\_\+child} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_ad5354d401fb5eb531d7b96ee9747f76a}{lsl\+\_\+prepend\+\_\+child} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a52061cbc108b95b34aa7d806d6115f91}{lsl\+\_\+append\+\_\+copy} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e2)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} \hyperlink{namespacelsl_a6f0ee82a8282d19f01ddb2654f367e6c}{lsl\+\_\+prepend\+\_\+copy} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e2)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_a1a946a99964cbd500165fbd5f3d33766}{lsl\+\_\+remove\+\_\+child\+\_\+n} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, const char $\ast$name)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_ad367e1e282a1fa614f44caaf113cf39c}{lsl\+\_\+remove\+\_\+child} (\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e, \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} e2)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver} \hyperlink{namespacelsl_a8da66ce60f1720e808771e14337e4bdb}{lsl\+\_\+create\+\_\+continuous\+\_\+resolver} (double forget\+\_\+after)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver} \hyperlink{namespacelsl_a673d636b9a52467485a9ff6114bcafd6}{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+byprop} (const char $\ast$prop, const char $\ast$value, double forget\+\_\+after)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver} \hyperlink{namespacelsl_a632a18d8a150be1ae72efac7074c476d}{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+bypred} (const char $\ast$pred, double forget\+\_\+after)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t \hyperlink{namespacelsl_ab8f71fa0b8c09cb21a78aa86d03ad8fc}{lsl\+\_\+resolver\+\_\+results} (\hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver} res, \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} $\ast$buffer, uint32\+\_\+t buffer\+\_\+elements)
+\item 
+L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void \hyperlink{namespacelsl_ab93a61a86bf3e5da34f91255897f6b03}{lsl\+\_\+destroy\+\_\+continuous\+\_\+resolver} (\hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver} res)
+\item 
+int32\+\_\+t \hyperlink{namespacelsl_a59009e83a8f0e33643474b373ad2f7f2}{protocol\+\_\+version} ()
+\item 
+int32\+\_\+t \hyperlink{namespacelsl_a25fc4deea3c2fb0df0744e3a24c56844}{library\+\_\+version} ()
+\item 
+const char $\ast$ \hyperlink{namespacelsl_a2a348cf022e9862396e4a10f60af42e9}{library\+\_\+info} ()
+\item 
+double \hyperlink{namespacelsl_ae1766ae2ab66141cb927612e57a0c8c6}{local\+\_\+clock} ()
+\item 
+std\+::vector$<$ \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info} $>$ \hyperlink{namespacelsl_a2935ff3db04cd640f69943ad14a61915}{resolve\+\_\+streams} (double wait\+\_\+time=1.\+0)
+\item 
+std\+::vector$<$ \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info} $>$ \hyperlink{namespacelsl_a4edfbcc31f48f27e8f7c2a36b69cd4b9}{resolve\+\_\+stream} (const std\+::string \&prop, const std\+::string \&value, int32\+\_\+t minimum=1, double timeout=\hyperlink{namespacelsl_a74cfbc9077aca21295117217249721ed}{F\+O\+R\+E\+V\+ER})
+\item 
+std\+::vector$<$ \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info} $>$ \hyperlink{namespacelsl_a824e14275a55df97d0552a91fc2c4097}{resolve\+\_\+stream} (const std\+::string \&pred, int32\+\_\+t minimum=1, double timeout=\hyperlink{namespacelsl_a74cfbc9077aca21295117217249721ed}{F\+O\+R\+E\+V\+ER})
+\item 
+void \hyperlink{namespacelsl_acce0545ac0a7831acde1a759b778393c}{check\+\_\+error} (int32\+\_\+t ec)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{namespacelsl_ac7ebddefe1091ef2d9459b6f9d79f7ab}{I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE} = 0.\+0
+\item 
+const double \hyperlink{namespacelsl_a57df17d8a2563a18b8b759a0cec696cc}{D\+E\+D\+U\+C\+E\+D\+\_\+\+T\+I\+M\+E\+S\+T\+A\+MP} = -\/1.\+0
+\item 
+const double \hyperlink{namespacelsl_a74cfbc9077aca21295117217249721ed}{F\+O\+R\+E\+V\+ER} = 32000000.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C++ A\+PI for the lab streaming layer.
+
+The lab streaming layer provides a set of functions to make instrument data accessible in real time within a lab network. From there, streams can be picked up by recording programs, viewing programs or custom experiment applications that access data streams in real time.
+
+The A\+PI covers two areas\+:
+\begin{DoxyItemize}
+\item The \char`\"{}push A\+P\+I\char`\"{} allows to create stream outlets and to push data (regular or irregular measurement time series, event data, coded audio/video frames, etc.) into them.
+\item The \char`\"{}pull A\+P\+I\char`\"{} allows to create stream inlets and read time-\/synched experiment data from them (for recording, viewing or experiment control).
+\end{DoxyItemize}
+
+To use this library you need to link to either the liblsl32 or liblsl64 shared library that comes with this header. Under Visual Studio the library is linked in automatically. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}\label{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}} 
+\index{lsl@{lsl}!lsl\+\_\+continuous\+\_\+resolver@{lsl\+\_\+continuous\+\_\+resolver}}
+\index{lsl\+\_\+continuous\+\_\+resolver@{lsl\+\_\+continuous\+\_\+resolver}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+continuous\+\_\+resolver}{lsl\_continuous\_resolver}}
+{\footnotesize\ttfamily typedef struct lsl\+\_\+continuous\+\_\+resolver\+\_\+$\ast$ \hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+::lsl\+\_\+continuous\+\_\+resolver}}
+
+Handle to a convenience object that resolves streams continuously in the background throughout its lifetime and which can be queried at any time for the set of streams that are currently visible on the network. \mbox{\Hypertarget{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}\label{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}} 
+\index{lsl@{lsl}!lsl\+\_\+inlet@{lsl\+\_\+inlet}}
+\index{lsl\+\_\+inlet@{lsl\+\_\+inlet}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+inlet}{lsl\_inlet}}
+{\footnotesize\ttfamily typedef struct lsl\+\_\+inlet\+\_\+struct\+\_\+$\ast$ \hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+::lsl\+\_\+inlet}}
+
+A stream inlet handle. Inlets are used to receive streaming data (and meta-\/data) from the lab network. \mbox{\Hypertarget{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}\label{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}} 
+\index{lsl@{lsl}!lsl\+\_\+outlet@{lsl\+\_\+outlet}}
+\index{lsl\+\_\+outlet@{lsl\+\_\+outlet}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+outlet}{lsl\_outlet}}
+{\footnotesize\ttfamily typedef struct lsl\+\_\+outlet\+\_\+struct\+\_\+$\ast$ \hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+::lsl\+\_\+outlet}}
+
+A stream outlet handle. Outlets are used to make streaming data (and the meta-\/data) available on the lab network. \mbox{\Hypertarget{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}\label{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}} 
+\index{lsl@{lsl}!lsl\+\_\+streaminfo@{lsl\+\_\+streaminfo}}
+\index{lsl\+\_\+streaminfo@{lsl\+\_\+streaminfo}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+streaminfo}{lsl\_streaminfo}}
+{\footnotesize\ttfamily typedef struct lsl\+\_\+streaminfo\+\_\+struct\+\_\+$\ast$ \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+::lsl\+\_\+streaminfo}}
+
+Handle to a stream info object. Stores the declaration of a data stream. Represents the following information\+: a) stream data format (\#channels, channel format) b) core information (stream name, content type, sampling rate) c) optional meta-\/data about the stream content (channel labels, measurement units, etc.)
+
+Whenever a program wants to provide a new stream on the lab network it will typically first create an lsl\+\_\+streaminfo to describe its properties and then construct an lsl\+\_\+outlet with it to create the stream on the network. Other parties who discover/resolve the outlet on the network can query the stream info; it is also written to disk when recording the stream (playing a similar role as a file header). \mbox{\Hypertarget{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}\label{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}} 
+\index{lsl@{lsl}!lsl\+\_\+xml\+\_\+ptr@{lsl\+\_\+xml\+\_\+ptr}}
+\index{lsl\+\_\+xml\+\_\+ptr@{lsl\+\_\+xml\+\_\+ptr}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+xml\+\_\+ptr}{lsl\_xml\_ptr}}
+{\footnotesize\ttfamily typedef struct lsl\+\_\+xml\+\_\+ptr\+\_\+struct\+\_\+$\ast$ \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+::lsl\+\_\+xml\+\_\+ptr}}
+
+A lightweight X\+ML element tree handle; models the description of a streaminfo object. X\+ML elements behave like advanced pointers into memory that is owned by some respective streaminfo. Has a name and can have multiple named children or have text content as value; attributes are omitted. Insider note\+: The interface is modeled after a subset of pugixml\textquotesingle{}s node type and is compatible with it. Type-\/casts between pugi\+::xml\+\_\+node\+\_\+struct$\ast$ and lsl\+\_\+xml\+\_\+ptr are permitted (in both directions) since the types are binary compatible. See also pugixml.\+googlecode.\+com/svn/tags/latest/docs/manual/access.html for additional documentation. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacelsl_a28d50dae6fd82eea8893ce3d63ccd46c}\label{namespacelsl_a28d50dae6fd82eea8893ce3d63ccd46c}} 
+\index{lsl@{lsl}!channel\+\_\+format\+\_\+t@{channel\+\_\+format\+\_\+t}}
+\index{channel\+\_\+format\+\_\+t@{channel\+\_\+format\+\_\+t}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{channel\+\_\+format\+\_\+t}{channel\_format\_t}}
+{\footnotesize\ttfamily enum \hyperlink{namespacelsl_a28d50dae6fd82eea8893ce3d63ccd46c}{lsl\+::channel\+\_\+format\+\_\+t}}
+
+Data format of a channel (each transmitted sample holds an array of channels). \mbox{\Hypertarget{namespacelsl_af188e978739868560b53dbf0ddd58e66}\label{namespacelsl_af188e978739868560b53dbf0ddd58e66}} 
+\index{lsl@{lsl}!lsl\+\_\+channel\+\_\+format\+\_\+t@{lsl\+\_\+channel\+\_\+format\+\_\+t}}
+\index{lsl\+\_\+channel\+\_\+format\+\_\+t@{lsl\+\_\+channel\+\_\+format\+\_\+t}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+channel\+\_\+format\+\_\+t}{lsl\_channel\_format\_t}}
+{\footnotesize\ttfamily enum \hyperlink{namespacelsl_af188e978739868560b53dbf0ddd58e66}{lsl\+::lsl\+\_\+channel\+\_\+format\+\_\+t}}
+
+Data format of a channel (each transmitted sample holds an array of channels). \mbox{\Hypertarget{namespacelsl_a7e674c7665887951b952c463258451a9}\label{namespacelsl_a7e674c7665887951b952c463258451a9}} 
+\index{lsl@{lsl}!lsl\+\_\+error\+\_\+code\+\_\+t@{lsl\+\_\+error\+\_\+code\+\_\+t}}
+\index{lsl\+\_\+error\+\_\+code\+\_\+t@{lsl\+\_\+error\+\_\+code\+\_\+t}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+error\+\_\+code\+\_\+t}{lsl\_error\_code\_t}}
+{\footnotesize\ttfamily enum \hyperlink{namespacelsl_a7e674c7665887951b952c463258451a9}{lsl\+::lsl\+\_\+error\+\_\+code\+\_\+t}}
+
+Possible error codes. \mbox{\Hypertarget{namespacelsl_a71fa5faeecfdd863828bdcd4117e736b}\label{namespacelsl_a71fa5faeecfdd863828bdcd4117e736b}} 
+\index{lsl@{lsl}!lsl\+\_\+processing\+\_\+options\+\_\+t@{lsl\+\_\+processing\+\_\+options\+\_\+t}}
+\index{lsl\+\_\+processing\+\_\+options\+\_\+t@{lsl\+\_\+processing\+\_\+options\+\_\+t}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+processing\+\_\+options\+\_\+t}{lsl\_processing\_options\_t}}
+{\footnotesize\ttfamily enum \hyperlink{namespacelsl_a71fa5faeecfdd863828bdcd4117e736b}{lsl\+::lsl\+\_\+processing\+\_\+options\+\_\+t}}
+
+Post-\/processing options for stream inlets. \mbox{\Hypertarget{namespacelsl_aaa1cffa7d29bb2756522bc2bb069e310}\label{namespacelsl_aaa1cffa7d29bb2756522bc2bb069e310}} 
+\index{lsl@{lsl}!processing\+\_\+options\+\_\+t@{processing\+\_\+options\+\_\+t}}
+\index{processing\+\_\+options\+\_\+t@{processing\+\_\+options\+\_\+t}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{processing\+\_\+options\+\_\+t}{processing\_options\_t}}
+{\footnotesize\ttfamily enum \hyperlink{namespacelsl_aaa1cffa7d29bb2756522bc2bb069e310}{lsl\+::processing\+\_\+options\+\_\+t}}
+
+Post-\/processing options for stream inlets. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacelsl_acce0545ac0a7831acde1a759b778393c}\label{namespacelsl_acce0545ac0a7831acde1a759b778393c}} 
+\index{lsl@{lsl}!check\+\_\+error@{check\+\_\+error}}
+\index{check\+\_\+error@{check\+\_\+error}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{check\+\_\+error()}{check\_error()}}
+{\footnotesize\ttfamily void lsl\+::check\+\_\+error (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{ec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A stream inlet. Inlets are used to receive streaming data (and meta-\/data) from the lab network.
+
+Check error codes returned from the C interface and translate into appropriate exceptions. \mbox{\Hypertarget{namespacelsl_a2a348cf022e9862396e4a10f60af42e9}\label{namespacelsl_a2a348cf022e9862396e4a10f60af42e9}} 
+\index{lsl@{lsl}!library\+\_\+info@{library\+\_\+info}}
+\index{library\+\_\+info@{library\+\_\+info}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{library\+\_\+info()}{library\_info()}}
+{\footnotesize\ttfamily const char$\ast$ lsl\+::library\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a string containing library information. The format of the string shouldn\textquotesingle{}t be used for anything important except giving a a debugging person a good idea which exact library version is used. \mbox{\Hypertarget{namespacelsl_a25fc4deea3c2fb0df0744e3a24c56844}\label{namespacelsl_a25fc4deea3c2fb0df0744e3a24c56844}} 
+\index{lsl@{lsl}!library\+\_\+version@{library\+\_\+version}}
+\index{library\+\_\+version@{library\+\_\+version}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{library\+\_\+version()}{library\_version()}}
+{\footnotesize\ttfamily int32\+\_\+t lsl\+::library\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Version of the liblsl library. The major version is \hyperlink{namespacelsl_a25fc4deea3c2fb0df0744e3a24c56844}{library\+\_\+version()} / 100; The minor version is \hyperlink{namespacelsl_a25fc4deea3c2fb0df0744e3a24c56844}{library\+\_\+version()} \% 100; \mbox{\Hypertarget{namespacelsl_ae1766ae2ab66141cb927612e57a0c8c6}\label{namespacelsl_ae1766ae2ab66141cb927612e57a0c8c6}} 
+\index{lsl@{lsl}!local\+\_\+clock@{local\+\_\+clock}}
+\index{local\+\_\+clock@{local\+\_\+clock}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{local\+\_\+clock()}{local\_clock()}}
+{\footnotesize\ttfamily double lsl\+::local\+\_\+clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Obtain a local system time stamp in seconds. The resolution is better than a millisecond. This reading can be used to assign time stamps to samples as they are being acquired. If the \char`\"{}age\char`\"{} of a sample is known at a particular time (e.\+g., from U\+SB transmission delays), it can be used as an offset to \hyperlink{namespacelsl_ae1766ae2ab66141cb927612e57a0c8c6}{local\+\_\+clock()} to obtain a better estimate of when a sample was actually captured. See \hyperlink{classlsl_1_1stream__outlet_a675bbe044a5053087e05e0267fe6722a}{stream\+\_\+outlet\+::push\+\_\+sample()} for a use case. \mbox{\Hypertarget{namespacelsl_a4e7b789b1a631d207683ba6fd821571f}\label{namespacelsl_a4e7b789b1a631d207683ba6fd821571f}} 
+\index{lsl@{lsl}!lsl\+\_\+append\+\_\+child@{lsl\+\_\+append\+\_\+child}}
+\index{lsl\+\_\+append\+\_\+child@{lsl\+\_\+append\+\_\+child}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+append\+\_\+child()}{lsl\_append\_child()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+append\+\_\+child (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Append a child element with the specified name. \mbox{\Hypertarget{namespacelsl_a3d9fb84fd68c84dd8692e25f1461a894}\label{namespacelsl_a3d9fb84fd68c84dd8692e25f1461a894}} 
+\index{lsl@{lsl}!lsl\+\_\+append\+\_\+child\+\_\+value@{lsl\+\_\+append\+\_\+child\+\_\+value}}
+\index{lsl\+\_\+append\+\_\+child\+\_\+value@{lsl\+\_\+append\+\_\+child\+\_\+value}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+append\+\_\+child\+\_\+value()}{lsl\_append\_child\_value()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+append\+\_\+child\+\_\+value (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Append a child node with a given name, which has a (nameless) plain-\/text child with the given text value. \mbox{\Hypertarget{namespacelsl_a52061cbc108b95b34aa7d806d6115f91}\label{namespacelsl_a52061cbc108b95b34aa7d806d6115f91}} 
+\index{lsl@{lsl}!lsl\+\_\+append\+\_\+copy@{lsl\+\_\+append\+\_\+copy}}
+\index{lsl\+\_\+append\+\_\+copy@{lsl\+\_\+append\+\_\+copy}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+append\+\_\+copy()}{lsl\_append\_copy()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+append\+\_\+copy (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e2 }\end{DoxyParamCaption})}
+
+Append a copy of the specified element as a child. \mbox{\Hypertarget{namespacelsl_a023258f274202055146894d26e3cf2ad}\label{namespacelsl_a023258f274202055146894d26e3cf2ad}} 
+\index{lsl@{lsl}!lsl\+\_\+child@{lsl\+\_\+child}}
+\index{lsl\+\_\+child@{lsl\+\_\+child}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+child()}{lsl\_child()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+child (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Get a child with a specified name. \mbox{\Hypertarget{namespacelsl_aa6a774c3c6e431610a98be1b83bc8a3b}\label{namespacelsl_aa6a774c3c6e431610a98be1b83bc8a3b}} 
+\index{lsl@{lsl}!lsl\+\_\+child\+\_\+value@{lsl\+\_\+child\+\_\+value}}
+\index{lsl\+\_\+child\+\_\+value@{lsl\+\_\+child\+\_\+value}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+child\+\_\+value()}{lsl\_child\_value()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+child\+\_\+value (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Get child value (value of the first child that is text). \mbox{\Hypertarget{namespacelsl_ac70e2fc6f64715cead7b4b8e776cc6e7}\label{namespacelsl_ac70e2fc6f64715cead7b4b8e776cc6e7}} 
+\index{lsl@{lsl}!lsl\+\_\+child\+\_\+value\+\_\+n@{lsl\+\_\+child\+\_\+value\+\_\+n}}
+\index{lsl\+\_\+child\+\_\+value\+\_\+n@{lsl\+\_\+child\+\_\+value\+\_\+n}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+child\+\_\+value\+\_\+n()}{lsl\_child\_value\_n()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+child\+\_\+value\+\_\+n (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Get child value of a child with a specified name. \mbox{\Hypertarget{namespacelsl_a3adefb15364dacbfa8f46b5f554ed4ac}\label{namespacelsl_a3adefb15364dacbfa8f46b5f554ed4ac}} 
+\index{lsl@{lsl}!lsl\+\_\+close\+\_\+stream@{lsl\+\_\+close\+\_\+stream}}
+\index{lsl\+\_\+close\+\_\+stream@{lsl\+\_\+close\+\_\+stream}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+close\+\_\+stream()}{lsl\_close\_stream()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+close\+\_\+stream (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in }\end{DoxyParamCaption})}
+
+Drop the current data stream. All samples that are still buffered or in flight will be dropped and transmission and buffering of data for this inlet will be stopped. If an application stops being interested in data from a source (temporarily or not) but keeps the outlet alive, it should call \hyperlink{namespacelsl_a3adefb15364dacbfa8f46b5f554ed4ac}{lsl\+\_\+close\+\_\+stream()} to not waste unnecessary system and network resources. \mbox{\Hypertarget{namespacelsl_a354a91fa3a4c87cdf179443650425390}\label{namespacelsl_a354a91fa3a4c87cdf179443650425390}} 
+\index{lsl@{lsl}!lsl\+\_\+copy\+\_\+streaminfo@{lsl\+\_\+copy\+\_\+streaminfo}}
+\index{lsl\+\_\+copy\+\_\+streaminfo@{lsl\+\_\+copy\+\_\+streaminfo}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+copy\+\_\+streaminfo()}{lsl\_copy\_streaminfo()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} lsl\+::lsl\+\_\+copy\+\_\+streaminfo (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Copy an existing streaminfo object (rarely used). \mbox{\Hypertarget{namespacelsl_a8da66ce60f1720e808771e14337e4bdb}\label{namespacelsl_a8da66ce60f1720e808771e14337e4bdb}} 
+\index{lsl@{lsl}!lsl\+\_\+create\+\_\+continuous\+\_\+resolver@{lsl\+\_\+create\+\_\+continuous\+\_\+resolver}}
+\index{lsl\+\_\+create\+\_\+continuous\+\_\+resolver@{lsl\+\_\+create\+\_\+continuous\+\_\+resolver}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+create\+\_\+continuous\+\_\+resolver()}{lsl\_create\_continuous\_resolver()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver} lsl\+::lsl\+\_\+create\+\_\+continuous\+\_\+resolver (\begin{DoxyParamCaption}\item[{double}]{forget\+\_\+after }\end{DoxyParamCaption})}
+
+Construct a new \hyperlink{classlsl_1_1continuous__resolver}{continuous\+\_\+resolver} that resolves all streams on the network. This is analogous to the functionality offered by the free function \hyperlink{namespacelsl_a2935ff3db04cd640f69943ad14a61915}{resolve\+\_\+streams()}. 
+\begin{DoxyParams}{Parameters}
+{\em forget\+\_\+after} & When a stream is no longer visible on the network (e.\+g., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver. The recommended default value is 5.\+0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacelsl_a632a18d8a150be1ae72efac7074c476d}\label{namespacelsl_a632a18d8a150be1ae72efac7074c476d}} 
+\index{lsl@{lsl}!lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+bypred@{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+bypred}}
+\index{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+bypred@{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+bypred}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+bypred()}{lsl\_create\_continuous\_resolver\_bypred()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver} lsl\+::lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+bypred (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pred,  }\item[{double}]{forget\+\_\+after }\end{DoxyParamCaption})}
+
+Construct a new \hyperlink{classlsl_1_1continuous__resolver}{continuous\+\_\+resolver} that resolves all streams that match a given X\+Path 1.\+0 predicate. This is analogous to the functionality provided by the free function resolve\+\_\+stream(pred). 
+\begin{DoxyParams}{Parameters}
+{\em pred} & The predicate string, e.\+g. \char`\"{}name=\textquotesingle{}\+Bio\+Semi\textquotesingle{}\char`\"{} or \char`\"{}type=\textquotesingle{}\+E\+E\+G\textquotesingle{} and starts-\/with(name,\textquotesingle{}\+Bio\+Semi\textquotesingle{}) and count(info/desc/channel)=32\char`\"{} \\
+\hline
+{\em forget\+\_\+after} & When a stream is no longer visible on the network (e.\+g., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver. The recommended default value is 5.\+0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacelsl_a673d636b9a52467485a9ff6114bcafd6}\label{namespacelsl_a673d636b9a52467485a9ff6114bcafd6}} 
+\index{lsl@{lsl}!lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+byprop@{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+byprop}}
+\index{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+byprop@{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+byprop}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+byprop()}{lsl\_create\_continuous\_resolver\_byprop()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver} lsl\+::lsl\+\_\+create\+\_\+continuous\+\_\+resolver\+\_\+byprop (\begin{DoxyParamCaption}\item[{const char $\ast$}]{prop,  }\item[{const char $\ast$}]{value,  }\item[{double}]{forget\+\_\+after }\end{DoxyParamCaption})}
+
+Construct a new \hyperlink{classlsl_1_1continuous__resolver}{continuous\+\_\+resolver} that resolves all streams with a specific value for a given property. This is analogous to the functionality provided by the free function resolve\+\_\+stream(prop,value). 
+\begin{DoxyParams}{Parameters}
+{\em prop} & The \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info} property that should have a specific value (e.\+g., \char`\"{}name\char`\"{}, \char`\"{}type\char`\"{}, \char`\"{}source\+\_\+id\char`\"{}, or \char`\"{}desc/manufaturer\char`\"{}). \\
+\hline
+{\em value} & The string value that the property should have (e.\+g., \char`\"{}\+E\+E\+G\char`\"{} as the type property). \\
+\hline
+{\em forget\+\_\+after} & When a stream is no longer visible on the network (e.\+g., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver. The recommended default value is 5.\+0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacelsl_a260c98cb095aefdb3232cbc38472abde}\label{namespacelsl_a260c98cb095aefdb3232cbc38472abde}} 
+\index{lsl@{lsl}!lsl\+\_\+create\+\_\+inlet@{lsl\+\_\+create\+\_\+inlet}}
+\index{lsl\+\_\+create\+\_\+inlet@{lsl\+\_\+create\+\_\+inlet}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+create\+\_\+inlet()}{lsl\_create\_inlet()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet} lsl\+::lsl\+\_\+create\+\_\+inlet (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info,  }\item[{int32\+\_\+t}]{max\+\_\+buflen,  }\item[{int32\+\_\+t}]{max\+\_\+chunklen,  }\item[{int32\+\_\+t}]{recover }\end{DoxyParamCaption})}
+
+Construct a new stream inlet from a resolved stream info. 
+\begin{DoxyParams}{Parameters}
+{\em info} & A resolved stream info object (as coming from one of the resolver functions). Note\+: the inlet makes a copy of the info object at its construction. Note\+: the \hyperlink{classlsl_1_1stream__inlet}{stream\+\_\+inlet} may also be constructed with a fully-\/specified \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}, if the desired channel format and count is already known up-\/front, but this is strongly discouraged and should only ever be done if there is no time to resolve the stream up-\/front (e.\+g., due to limitations in the client program). \\
+\hline
+{\em max\+\_\+buflen} & Optionally the maximum amount of data to buffer (in seconds if there is a nominal sampling rate, otherwise x100 in samples). Recording applications want to use a fairly large buffer size here, while real-\/time applications would only buffer as much as they need to perform their next calculation. A good default is 360, which corresponds to 6 minutes of data. \\
+\hline
+{\em max\+\_\+chunklen} & Optionally the maximum size, in samples, at which chunks are transmitted. If specified as 0, the chunk sizes preferred by the sender are used. Recording applications can use a generous size here (leaving it to the network how to pack things), while real-\/time applications may want a finer (perhaps 1-\/sample) granularity. \\
+\hline
+{\em recover} & Try to silently recover lost streams that are recoverable (=those that that have a source\+\_\+id set). It is generally a good idea to enable this, unless the application wants to act in a special way when a data provider has temporarily crashed. If recover is 0 or the stream is not recoverable, most outlet functions will return an lsl\+\_\+lost\+\_\+error if the stream\textquotesingle{}s source is lost. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly created lsl\+\_\+inlet handle or N\+U\+LL in the event that an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a4c92219e56eec896266a36ae58426d4b}\label{namespacelsl_a4c92219e56eec896266a36ae58426d4b}} 
+\index{lsl@{lsl}!lsl\+\_\+create\+\_\+outlet@{lsl\+\_\+create\+\_\+outlet}}
+\index{lsl\+\_\+create\+\_\+outlet@{lsl\+\_\+create\+\_\+outlet}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+create\+\_\+outlet()}{lsl\_create\_outlet()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet} lsl\+::lsl\+\_\+create\+\_\+outlet (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info,  }\item[{int32\+\_\+t}]{chunk\+\_\+size,  }\item[{int32\+\_\+t}]{max\+\_\+buffered }\end{DoxyParamCaption})}
+
+Establish a new stream outlet. This makes the stream discoverable. 
+\begin{DoxyParams}{Parameters}
+{\em info} & The stream information to use for creating this stream. Stays constant over the lifetime of the outlet. Note\+: the outlet makes a copy of the streaminfo object upon construction (so the old info should still be destroyed.) \\
+\hline
+{\em chunk\+\_\+size} & Optionally the desired chunk granularity (in samples) for transmission. If specified as 0, each push operation yields one chunk. Stream recipients can have this setting bypassed. \\
+\hline
+{\em max\+\_\+buffered} & Optionally the maximum amount of data to buffer (in seconds if there is a nominal sampling rate, otherwise x100 in samples). A good default is 360, which corresponds to 6 minutes of data. Note that, for high-\/bandwidth data you will almost certainly want to use a lower value here to avoid running out of R\+AM. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly created lsl\+\_\+outlet handle or N\+U\+LL in the event that an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_abf20c6316cd58a713a674ef2213914d2}\label{namespacelsl_abf20c6316cd58a713a674ef2213914d2}} 
+\index{lsl@{lsl}!lsl\+\_\+create\+\_\+streaminfo@{lsl\+\_\+create\+\_\+streaminfo}}
+\index{lsl\+\_\+create\+\_\+streaminfo@{lsl\+\_\+create\+\_\+streaminfo}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+create\+\_\+streaminfo()}{lsl\_create\_streaminfo()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} lsl\+::lsl\+\_\+create\+\_\+streaminfo (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{type,  }\item[{int32\+\_\+t}]{channel\+\_\+count,  }\item[{double}]{nominal\+\_\+srate,  }\item[{\hyperlink{namespacelsl_af188e978739868560b53dbf0ddd58e66}{lsl\+\_\+channel\+\_\+format\+\_\+t}}]{channel\+\_\+format,  }\item[{const char $\ast$}]{source\+\_\+id }\end{DoxyParamCaption})}
+
+Construct a new streaminfo object. Core stream information is specified here. Any remaining meta-\/data can be added later. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the stream. Describes the device (or product series) that this stream makes available (for use by programs, experimenters or data analysts). Cannot be empty. \\
+\hline
+{\em type} & Content type of the stream. Please see \href{https://github.com/sccn/xdf/wiki/Meta-Data}{\tt https\+://github.\+com/sccn/xdf/wiki/\+Meta-\/\+Data} (or web search for\+: X\+DF meta-\/data) for pre-\/defined content-\/type names, but you can also make up your own. The content type is the preferred way to find streams (as opposed to searching by name). \\
+\hline
+{\em channel\+\_\+count} & Number of channels per sample. This stays constant for the lifetime of the stream. \\
+\hline
+{\em nominal\+\_\+srate} & The sampling rate (in Hz) as advertised by the data source, if regular (otherwise set to I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE). \\
+\hline
+{\em channel\+\_\+format} & Format/type of each channel. If your channels have different formats, consider supplying multiple streams or use the largest type that can hold them all (such as cft\+\_\+double64). A good default is cft\+\_\+float32. \\
+\hline
+{\em source\+\_\+id} & Unique identifier of the source or device, if available (such as the serial number). Allows recipients to recover from failure even after the serving app or device crashes. May in some cases also be constructed from device settings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly created streaminfo handle or N\+U\+LL in the event that an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ab93a61a86bf3e5da34f91255897f6b03}\label{namespacelsl_ab93a61a86bf3e5da34f91255897f6b03}} 
+\index{lsl@{lsl}!lsl\+\_\+destroy\+\_\+continuous\+\_\+resolver@{lsl\+\_\+destroy\+\_\+continuous\+\_\+resolver}}
+\index{lsl\+\_\+destroy\+\_\+continuous\+\_\+resolver@{lsl\+\_\+destroy\+\_\+continuous\+\_\+resolver}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+destroy\+\_\+continuous\+\_\+resolver()}{lsl\_destroy\_continuous\_resolver()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+destroy\+\_\+continuous\+\_\+resolver (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver}}]{res }\end{DoxyParamCaption})}
+
+Destructor for the continuous resolver. \mbox{\Hypertarget{namespacelsl_a079daffcce73f1ed31bd52d681019029}\label{namespacelsl_a079daffcce73f1ed31bd52d681019029}} 
+\index{lsl@{lsl}!lsl\+\_\+destroy\+\_\+inlet@{lsl\+\_\+destroy\+\_\+inlet}}
+\index{lsl\+\_\+destroy\+\_\+inlet@{lsl\+\_\+destroy\+\_\+inlet}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+destroy\+\_\+inlet()}{lsl\_destroy\_inlet()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+destroy\+\_\+inlet (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in }\end{DoxyParamCaption})}
+
+Destructor. The inlet will automatically disconnect if destroyed. \mbox{\Hypertarget{namespacelsl_aa39980eac53711feece8bfc3b50d2b24}\label{namespacelsl_aa39980eac53711feece8bfc3b50d2b24}} 
+\index{lsl@{lsl}!lsl\+\_\+destroy\+\_\+outlet@{lsl\+\_\+destroy\+\_\+outlet}}
+\index{lsl\+\_\+destroy\+\_\+outlet@{lsl\+\_\+destroy\+\_\+outlet}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+destroy\+\_\+outlet()}{lsl\_destroy\_outlet()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+destroy\+\_\+outlet (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet}}]{out }\end{DoxyParamCaption})}
+
+Destroy an outlet. The outlet will no longer be discoverable after destruction and all connected inlets will stop delivering data. \mbox{\Hypertarget{namespacelsl_afc7ae71903a0c20763937739fa62df32}\label{namespacelsl_afc7ae71903a0c20763937739fa62df32}} 
+\index{lsl@{lsl}!lsl\+\_\+destroy\+\_\+streaminfo@{lsl\+\_\+destroy\+\_\+streaminfo}}
+\index{lsl\+\_\+destroy\+\_\+streaminfo@{lsl\+\_\+destroy\+\_\+streaminfo}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+destroy\+\_\+streaminfo()}{lsl\_destroy\_streaminfo()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+destroy\+\_\+streaminfo (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Destroy a previously created streaminfo object. \mbox{\Hypertarget{namespacelsl_ac517533eaabb224fd2f893e1f4274d82}\label{namespacelsl_ac517533eaabb224fd2f893e1f4274d82}} 
+\index{lsl@{lsl}!lsl\+\_\+destroy\+\_\+string@{lsl\+\_\+destroy\+\_\+string}}
+\index{lsl\+\_\+destroy\+\_\+string@{lsl\+\_\+destroy\+\_\+string}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+destroy\+\_\+string()}{lsl\_destroy\_string()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+destroy\+\_\+string (\begin{DoxyParamCaption}\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Deallocate a string that has been transferred to the application. Rarely used\+: the only use case is to deallocate the contents of string-\/valued samples received from L\+SL in an application where no free() method is available (e.\+g., in some scripting languages). \mbox{\Hypertarget{namespacelsl_aa8e3affdd320f70d77b87262d508ba58}\label{namespacelsl_aa8e3affdd320f70d77b87262d508ba58}} 
+\index{lsl@{lsl}!lsl\+\_\+empty@{lsl\+\_\+empty}}
+\index{lsl\+\_\+empty@{lsl\+\_\+empty}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+empty()}{lsl\_empty()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+empty (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Whether this node is empty. \mbox{\Hypertarget{namespacelsl_a00b272ef8da2c1f1a6ea440219728c32}\label{namespacelsl_a00b272ef8da2c1f1a6ea440219728c32}} 
+\index{lsl@{lsl}!lsl\+\_\+first\+\_\+child@{lsl\+\_\+first\+\_\+child}}
+\index{lsl\+\_\+first\+\_\+child@{lsl\+\_\+first\+\_\+child}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+first\+\_\+child()}{lsl\_first\_child()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+first\+\_\+child (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Get the first child of the element. \mbox{\Hypertarget{namespacelsl_a40acd87a21d3c91a524bd72012dc3328}\label{namespacelsl_a40acd87a21d3c91a524bd72012dc3328}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+channel\+\_\+count@{lsl\+\_\+get\+\_\+channel\+\_\+count}}
+\index{lsl\+\_\+get\+\_\+channel\+\_\+count@{lsl\+\_\+get\+\_\+channel\+\_\+count}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+channel\+\_\+count()}{lsl\_get\_channel\_count()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+get\+\_\+channel\+\_\+count (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Number of channels of the stream. A stream has at least one channels; the channel count stays constant for all samples. \mbox{\Hypertarget{namespacelsl_a70c26257a8f3042084140a85a867a300}\label{namespacelsl_a70c26257a8f3042084140a85a867a300}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+channel\+\_\+format@{lsl\+\_\+get\+\_\+channel\+\_\+format}}
+\index{lsl\+\_\+get\+\_\+channel\+\_\+format@{lsl\+\_\+get\+\_\+channel\+\_\+format}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+channel\+\_\+format()}{lsl\_get\_channel\_format()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_af188e978739868560b53dbf0ddd58e66}{lsl\+\_\+channel\+\_\+format\+\_\+t} lsl\+::lsl\+\_\+get\+\_\+channel\+\_\+format (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Channel format of the stream. All channels in a stream have the same format. However, a device might offer multiple time-\/synched streams each with its own format. \mbox{\Hypertarget{namespacelsl_aded8755dc0f65d8219449ef37ba7f6c5}\label{namespacelsl_aded8755dc0f65d8219449ef37ba7f6c5}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+created\+\_\+at@{lsl\+\_\+get\+\_\+created\+\_\+at}}
+\index{lsl\+\_\+get\+\_\+created\+\_\+at@{lsl\+\_\+get\+\_\+created\+\_\+at}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+created\+\_\+at()}{lsl\_get\_created\_at()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double lsl\+::lsl\+\_\+get\+\_\+created\+\_\+at (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Creation time stamp of the stream. This is the time stamp when the stream was first created (as determined via \hyperlink{namespacelsl_ae1766ae2ab66141cb927612e57a0c8c6}{local\+\_\+clock()} on the providing machine). \mbox{\Hypertarget{namespacelsl_aeb428e46e46db8bd534e45ed8a76a120}\label{namespacelsl_aeb428e46e46db8bd534e45ed8a76a120}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+desc@{lsl\+\_\+get\+\_\+desc}}
+\index{lsl\+\_\+get\+\_\+desc@{lsl\+\_\+get\+\_\+desc}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+desc()}{lsl\_get\_desc()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+get\+\_\+desc (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Extended description of the stream. It is highly recommended that at least the channel labels are described here. See code examples on the L\+SL wiki. Other information, such as amplifier settings, measurement units if deviating from defaults, setup information, subject information, etc., can be specified here, as well. Meta-\/data recommendations follow the X\+DF file format project (github.\+com/sccn/xdf/wiki/\+Meta-\/\+Data or web search for\+: X\+DF meta-\/data).
+
+Important\+: if you use a stream content type for which meta-\/data recommendations exist, please try to lay out your meta-\/data in agreement with these recommendations for compatibility with other applications. \mbox{\Hypertarget{namespacelsl_a6a303d699340f95ed7b68d7bf129fd45}\label{namespacelsl_a6a303d699340f95ed7b68d7bf129fd45}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+fullinfo@{lsl\+\_\+get\+\_\+fullinfo}}
+\index{lsl\+\_\+get\+\_\+fullinfo@{lsl\+\_\+get\+\_\+fullinfo}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+fullinfo()}{lsl\_get\_fullinfo()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} lsl\+::lsl\+\_\+get\+\_\+fullinfo (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{double}]{timeout,  }\item[{int32\+\_\+t $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Retrieve the complete information of the given stream, including the extended description. Can be invoked at any time of the stream\textquotesingle{}s lifetime. 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em timeout} & Timeout of the operation. Use L\+S\+L\+\_\+\+F\+O\+R\+E\+V\+ER to effectively disable it. \\
+\hline
+{\em ec} & Error code\+: if nonzero, can be either lsl\+\_\+timeout\+\_\+error (if the timeout has expired) or lsl\+\_\+lost\+\_\+error (if the stream source has been lost). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of the full streaminfo of the inlet or N\+U\+LL in the event that an error happened. Note\+: it is the user\textquotesingle{}s responsibility to destroy it when it is no longer needed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ab74235be779da7e0cdcfd59b498bdf3f}\label{namespacelsl_ab74235be779da7e0cdcfd59b498bdf3f}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+hostname@{lsl\+\_\+get\+\_\+hostname}}
+\index{lsl\+\_\+get\+\_\+hostname@{lsl\+\_\+get\+\_\+hostname}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+hostname()}{lsl\_get\_hostname()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+get\+\_\+hostname (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Hostname of the providing machine (once bound to an outlet). Modification is not permitted. \mbox{\Hypertarget{namespacelsl_add36e044b2c854296d26dbe429ef0445}\label{namespacelsl_add36e044b2c854296d26dbe429ef0445}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+info@{lsl\+\_\+get\+\_\+info}}
+\index{lsl\+\_\+get\+\_\+info@{lsl\+\_\+get\+\_\+info}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+info()}{lsl\_get\_info()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} lsl\+::lsl\+\_\+get\+\_\+info (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet}}]{out }\end{DoxyParamCaption})}
+
+Retrieve a handle to the stream info provided by this outlet. This is what was used to create the stream (and also has the Additional Network Information fields assigned). \begin{DoxyReturn}{Returns}
+A copy of the streaminfo of the outlet or N\+U\+LL in the event that an error occurred. Note\+: it is the user\textquotesingle{}s responsibility to destroy it when it is no longer needed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ad356f55776a73d03998837c5c32fc95e}\label{namespacelsl_ad356f55776a73d03998837c5c32fc95e}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+name@{lsl\+\_\+get\+\_\+name}}
+\index{lsl\+\_\+get\+\_\+name@{lsl\+\_\+get\+\_\+name}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+name()}{lsl\_get\_name()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Name of the stream. This is a human-\/readable name. For streams offered by device modules, it refers to the type of device or product series that is generating the data of the stream. If the source is an application, the name may be a more generic or specific identifier. Multiple streams with the same name can coexist, though potentially at the cost of ambiguity (for the recording app or experimenter). \begin{DoxyReturn}{Returns}
+A library-\/owned pointer to the string value. Modification is not permitted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a17e4e6d432dc0b7280df4b5365c7da46}\label{namespacelsl_a17e4e6d432dc0b7280df4b5365c7da46}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+nominal\+\_\+srate@{lsl\+\_\+get\+\_\+nominal\+\_\+srate}}
+\index{lsl\+\_\+get\+\_\+nominal\+\_\+srate@{lsl\+\_\+get\+\_\+nominal\+\_\+srate}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+nominal\+\_\+srate()}{lsl\_get\_nominal\_srate()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double lsl\+::lsl\+\_\+get\+\_\+nominal\+\_\+srate (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Sampling rate of the stream, according to the source (in Hz). If a stream is irregularly sampled, this should be set to I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE.
+
+Note that no data will be lost even if this sampling rate is incorrect or if a device has temporary hiccups, since all samples will be recorded anyway (except for those dropped by the device itself). However, when the recording is imported into an application, a good importer may correct such errors more accurately if the advertised sampling rate was close to the specs of the device. \mbox{\Hypertarget{namespacelsl_ae28332bda70380cfd546fc158cd6f009}\label{namespacelsl_ae28332bda70380cfd546fc158cd6f009}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+session\+\_\+id@{lsl\+\_\+get\+\_\+session\+\_\+id}}
+\index{lsl\+\_\+get\+\_\+session\+\_\+id@{lsl\+\_\+get\+\_\+session\+\_\+id}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+session\+\_\+id()}{lsl\_get\_session\_id()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+get\+\_\+session\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Session ID for the given stream. The session id is an optional human-\/assigned identifier of the recording session. While it is rarely used, it can be used to prevent concurrent recording activitites on the same sub-\/network (e.\+g., in multiple experiment areas) from seeing each other\textquotesingle{}s streams (assigned via a configuration file by the experimenter, see Network Connectivity on the L\+SL wiki). \begin{DoxyReturn}{Returns}
+A library-\/owned pointer to the string value. Modification is not permitted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ad2987f3c32e0edae147498a8870a3215}\label{namespacelsl_ad2987f3c32e0edae147498a8870a3215}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+source\+\_\+id@{lsl\+\_\+get\+\_\+source\+\_\+id}}
+\index{lsl\+\_\+get\+\_\+source\+\_\+id@{lsl\+\_\+get\+\_\+source\+\_\+id}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+source\+\_\+id()}{lsl\_get\_source\_id()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+get\+\_\+source\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Unique identifier of the stream\textquotesingle{}s source, if available. The unique source (or device) identifier is an optional piece of information that, if available, allows that endpoints (such as the recording program) can re-\/acquire a stream automatically once it is back online. \begin{DoxyReturn}{Returns}
+A library-\/owned pointer to the string value. Modification is not permitted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a417e01d26d64718513bc0ef2c58acf89}\label{namespacelsl_a417e01d26d64718513bc0ef2c58acf89}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+type@{lsl\+\_\+get\+\_\+type}}
+\index{lsl\+\_\+get\+\_\+type@{lsl\+\_\+get\+\_\+type}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+type()}{lsl\_get\_type()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+get\+\_\+type (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Content type of the stream. The content type is a short string such as \char`\"{}\+E\+E\+G\char`\"{}, \char`\"{}\+Gaze\char`\"{} which describes the content carried by the channel (if known). If a stream contains mixed content this value need not be assigned but may instead be stored in the description of channel types. To be useful to applications and automated processing systems using the recommended content types is preferred. Content types usually follow those pre-\/defined in \href{https://github.com/sccn/xdf/wiki/Meta-Data}{\tt https\+://github.\+com/sccn/xdf/wiki/\+Meta-\/\+Data} (or web search for\+: X\+DF meta-\/data). \begin{DoxyReturn}{Returns}
+A library-\/owned pointer to the string value. Modification is not permitted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a6e18a9b1c544932e96179a44bb1f31ec}\label{namespacelsl_a6e18a9b1c544932e96179a44bb1f31ec}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+uid@{lsl\+\_\+get\+\_\+uid}}
+\index{lsl\+\_\+get\+\_\+uid@{lsl\+\_\+get\+\_\+uid}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+uid()}{lsl\_get\_uid()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+get\+\_\+uid (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Unique ID of the stream outlet (once assigned). This is a unique identifier of the stream outlet, and is guaranteed to be different across multiple instantiations of the same outlet (e.\+g., after a re-\/start). \begin{DoxyReturn}{Returns}
+A library-\/owned pointer to the string value. Modification is not permitted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ab889dd6f9a5fc6d6cd01a0b3dc153387}\label{namespacelsl_ab889dd6f9a5fc6d6cd01a0b3dc153387}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+version@{lsl\+\_\+get\+\_\+version}}
+\index{lsl\+\_\+get\+\_\+version@{lsl\+\_\+get\+\_\+version}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+version()}{lsl\_get\_version()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+get\+\_\+version (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Protocol version used to deliver the stream. \mbox{\Hypertarget{namespacelsl_ad1a9b14dccf565e5ecb79c093fe0fd39}\label{namespacelsl_ad1a9b14dccf565e5ecb79c093fe0fd39}} 
+\index{lsl@{lsl}!lsl\+\_\+get\+\_\+xml@{lsl\+\_\+get\+\_\+xml}}
+\index{lsl\+\_\+get\+\_\+xml@{lsl\+\_\+get\+\_\+xml}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+get\+\_\+xml()}{lsl\_get\_xml()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI char$\ast$ lsl\+::lsl\+\_\+get\+\_\+xml (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info }\end{DoxyParamCaption})}
+
+Retrieve the entire streaminfo in X\+ML format. This yields an X\+ML document (in string form) whose top-\/level element is $<$info$>$. The info element contains one element for each field of the streaminfo class, including\+: a) the core elements $<$name$>$, $<$type$>$, $<$channel\+\_\+count$>$, $<$nominal\+\_\+srate$>$, $<$channel\+\_\+format$>$, $<$source\+\_\+id$>$ b) the misc elements $<$version$>$, $<$created\+\_\+at$>$, $<$uid$>$, $<$session\+\_\+id$>$, $<$v4address$>$, $<$v4data\+\_\+port$>$, $<$v4service\+\_\+port$>$, $<$v6address$>$, $<$v6data\+\_\+port$>$, $<$v6service\+\_\+port$>$ c) the extended description element $<$desc$>$ with user-\/defined sub-\/elements. \begin{DoxyReturn}{Returns}
+A pointer to a copy of the X\+ML text or N\+U\+LL in the event that an error occurred. Note\+: It is the user\textquotesingle{}s responsibility to deallocate this string when it is no longer needed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a675de9cdbbd01dee30ce59e49f4bdf3a}\label{namespacelsl_a675de9cdbbd01dee30ce59e49f4bdf3a}} 
+\index{lsl@{lsl}!lsl\+\_\+have\+\_\+consumers@{lsl\+\_\+have\+\_\+consumers}}
+\index{lsl\+\_\+have\+\_\+consumers@{lsl\+\_\+have\+\_\+consumers}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+have\+\_\+consumers()}{lsl\_have\_consumers()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+have\+\_\+consumers (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet}}]{out }\end{DoxyParamCaption})}
+
+Check whether consumers are currently registered. While it does not hurt, there is technically no reason to push samples if there is no consumer. \mbox{\Hypertarget{namespacelsl_a423fa21a73fa370762fe168081f12a41}\label{namespacelsl_a423fa21a73fa370762fe168081f12a41}} 
+\index{lsl@{lsl}!lsl\+\_\+is\+\_\+text@{lsl\+\_\+is\+\_\+text}}
+\index{lsl\+\_\+is\+\_\+text@{lsl\+\_\+is\+\_\+text}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+is\+\_\+text()}{lsl\_is\_text()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+is\+\_\+text (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Whether this is a text body (instead of an X\+ML element). True both for plain char data and C\+Data. \mbox{\Hypertarget{namespacelsl_aeb717da468fa8bfc541af78b59052e6d}\label{namespacelsl_aeb717da468fa8bfc541af78b59052e6d}} 
+\index{lsl@{lsl}!lsl\+\_\+last\+\_\+child@{lsl\+\_\+last\+\_\+child}}
+\index{lsl\+\_\+last\+\_\+child@{lsl\+\_\+last\+\_\+child}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+last\+\_\+child()}{lsl\_last\_child()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+last\+\_\+child (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Get the last child of the element. \mbox{\Hypertarget{namespacelsl_a4e35f8426ffee9dbe7139dbe404e0442}\label{namespacelsl_a4e35f8426ffee9dbe7139dbe404e0442}} 
+\index{lsl@{lsl}!lsl\+\_\+library\+\_\+info@{lsl\+\_\+library\+\_\+info}}
+\index{lsl\+\_\+library\+\_\+info@{lsl\+\_\+library\+\_\+info}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+library\+\_\+info()}{lsl\_library\_info()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+library\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get a string containing library information. The format of the string shouldn\textquotesingle{}t be used for anything important except giving a a debugging person a good idea which exact library version is used. \mbox{\Hypertarget{namespacelsl_aa706e1332352902a9b531a88af671896}\label{namespacelsl_aa706e1332352902a9b531a88af671896}} 
+\index{lsl@{lsl}!lsl\+\_\+library\+\_\+version@{lsl\+\_\+library\+\_\+version}}
+\index{lsl\+\_\+library\+\_\+version@{lsl\+\_\+library\+\_\+version}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+library\+\_\+version()}{lsl\_library\_version()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+library\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Version of the liblsl library. The major version is \hyperlink{namespacelsl_a25fc4deea3c2fb0df0744e3a24c56844}{library\+\_\+version()} / 100; The minor version is \hyperlink{namespacelsl_a25fc4deea3c2fb0df0744e3a24c56844}{library\+\_\+version()} \% 100; \mbox{\Hypertarget{namespacelsl_a475274f88a060924c9bd1b38879ec63a}\label{namespacelsl_a475274f88a060924c9bd1b38879ec63a}} 
+\index{lsl@{lsl}!lsl\+\_\+local\+\_\+clock@{lsl\+\_\+local\+\_\+clock}}
+\index{lsl\+\_\+local\+\_\+clock@{lsl\+\_\+local\+\_\+clock}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+local\+\_\+clock()}{lsl\_local\_clock()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double lsl\+::lsl\+\_\+local\+\_\+clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Obtain a local system time stamp in seconds. The resolution is better than a millisecond. This reading can be used to assign time stamps to samples as they are being acquired. If the \char`\"{}age\char`\"{} of a sample is known at a particular time (e.\+g., from U\+SB transmission delays), it can be used as an offset to \hyperlink{namespacelsl_a475274f88a060924c9bd1b38879ec63a}{lsl\+\_\+local\+\_\+clock()} to obtain a better estimate of when a sample was actually captured. See lsl\+\_\+push\+\_\+sample() for a use case. \mbox{\Hypertarget{namespacelsl_a55761eae47f0963850f6077b4c61701e}\label{namespacelsl_a55761eae47f0963850f6077b4c61701e}} 
+\index{lsl@{lsl}!lsl\+\_\+name@{lsl\+\_\+name}}
+\index{lsl\+\_\+name@{lsl\+\_\+name}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+name()}{lsl\_name()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Name of the element. \mbox{\Hypertarget{namespacelsl_ad719cddda958c613ff328245dc5b4277}\label{namespacelsl_ad719cddda958c613ff328245dc5b4277}} 
+\index{lsl@{lsl}!lsl\+\_\+next\+\_\+sibling@{lsl\+\_\+next\+\_\+sibling}}
+\index{lsl\+\_\+next\+\_\+sibling@{lsl\+\_\+next\+\_\+sibling}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+next\+\_\+sibling()}{lsl\_next\_sibling()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+next\+\_\+sibling (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Get the next sibling in the children list of the parent node. \mbox{\Hypertarget{namespacelsl_ac898e643d9e43785030c3e1a7524ea70}\label{namespacelsl_ac898e643d9e43785030c3e1a7524ea70}} 
+\index{lsl@{lsl}!lsl\+\_\+next\+\_\+sibling\+\_\+n@{lsl\+\_\+next\+\_\+sibling\+\_\+n}}
+\index{lsl\+\_\+next\+\_\+sibling\+\_\+n@{lsl\+\_\+next\+\_\+sibling\+\_\+n}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+next\+\_\+sibling\+\_\+n()}{lsl\_next\_sibling\_n()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+next\+\_\+sibling\+\_\+n (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Get the next sibling with the specified name. \mbox{\Hypertarget{namespacelsl_ad72aa9d01ea937b413adf615322ce9a7}\label{namespacelsl_ad72aa9d01ea937b413adf615322ce9a7}} 
+\index{lsl@{lsl}!lsl\+\_\+open\+\_\+stream@{lsl\+\_\+open\+\_\+stream}}
+\index{lsl\+\_\+open\+\_\+stream@{lsl\+\_\+open\+\_\+stream}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+open\+\_\+stream()}{lsl\_open\_stream()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+open\+\_\+stream (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{double}]{timeout,  }\item[{int32\+\_\+t $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Subscribe to the data stream. All samples pushed in at the other end from this moment onwards will be queued and eventually be delivered in response to pull\+\_\+sample() calls. Pulling a sample without some preceding \hyperlink{namespacelsl_ad72aa9d01ea937b413adf615322ce9a7}{lsl\+\_\+open\+\_\+stream()} is permitted (the stream will then be opened implicitly). 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em timeout} & Optional timeout of the operation. Use L\+S\+L\+\_\+\+F\+O\+R\+E\+V\+ER to effectively disable it. \\
+\hline
+{\em ec} & Error code\+: if nonzero, can be either lsl\+\_\+timeout\+\_\+error (if the timeout has expired) or lsl\+\_\+lost\+\_\+error (if the stream source has been lost). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacelsl_aa8decbe6cf9d9f1c6358af2d6a475bd5}\label{namespacelsl_aa8decbe6cf9d9f1c6358af2d6a475bd5}} 
+\index{lsl@{lsl}!lsl\+\_\+parent@{lsl\+\_\+parent}}
+\index{lsl\+\_\+parent@{lsl\+\_\+parent}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+parent()}{lsl\_parent()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+parent (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Get the parent node. \mbox{\Hypertarget{namespacelsl_ad5354d401fb5eb531d7b96ee9747f76a}\label{namespacelsl_ad5354d401fb5eb531d7b96ee9747f76a}} 
+\index{lsl@{lsl}!lsl\+\_\+prepend\+\_\+child@{lsl\+\_\+prepend\+\_\+child}}
+\index{lsl\+\_\+prepend\+\_\+child@{lsl\+\_\+prepend\+\_\+child}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+prepend\+\_\+child()}{lsl\_prepend\_child()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+prepend\+\_\+child (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Prepend a child element with the specified name. \mbox{\Hypertarget{namespacelsl_a40369db591e0a19927d76b6d5c811a94}\label{namespacelsl_a40369db591e0a19927d76b6d5c811a94}} 
+\index{lsl@{lsl}!lsl\+\_\+prepend\+\_\+child\+\_\+value@{lsl\+\_\+prepend\+\_\+child\+\_\+value}}
+\index{lsl\+\_\+prepend\+\_\+child\+\_\+value@{lsl\+\_\+prepend\+\_\+child\+\_\+value}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+prepend\+\_\+child\+\_\+value()}{lsl\_prepend\_child\_value()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+prepend\+\_\+child\+\_\+value (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Prepend a child node with a given name, which has a (nameless) plain-\/text child with the given text value. \mbox{\Hypertarget{namespacelsl_a6f0ee82a8282d19f01ddb2654f367e6c}\label{namespacelsl_a6f0ee82a8282d19f01ddb2654f367e6c}} 
+\index{lsl@{lsl}!lsl\+\_\+prepend\+\_\+copy@{lsl\+\_\+prepend\+\_\+copy}}
+\index{lsl\+\_\+prepend\+\_\+copy@{lsl\+\_\+prepend\+\_\+copy}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+prepend\+\_\+copy()}{lsl\_prepend\_copy()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+prepend\+\_\+copy (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e2 }\end{DoxyParamCaption})}
+
+Prepend a child element with the specified name. \mbox{\Hypertarget{namespacelsl_a61acf3af105e47f718bbc312766caf44}\label{namespacelsl_a61acf3af105e47f718bbc312766caf44}} 
+\index{lsl@{lsl}!lsl\+\_\+previous\+\_\+sibling@{lsl\+\_\+previous\+\_\+sibling}}
+\index{lsl\+\_\+previous\+\_\+sibling@{lsl\+\_\+previous\+\_\+sibling}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+previous\+\_\+sibling()}{lsl\_previous\_sibling()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+previous\+\_\+sibling (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Get the previous sibling in the children list of the parent node. \mbox{\Hypertarget{namespacelsl_a1b42f95654ea48c92a15bd077e6c73ac}\label{namespacelsl_a1b42f95654ea48c92a15bd077e6c73ac}} 
+\index{lsl@{lsl}!lsl\+\_\+previous\+\_\+sibling\+\_\+n@{lsl\+\_\+previous\+\_\+sibling\+\_\+n}}
+\index{lsl\+\_\+previous\+\_\+sibling\+\_\+n@{lsl\+\_\+previous\+\_\+sibling\+\_\+n}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+previous\+\_\+sibling\+\_\+n()}{lsl\_previous\_sibling\_n()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI \hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr} lsl\+::lsl\+\_\+previous\+\_\+sibling\+\_\+n (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Get the previous sibling with the specified name. \mbox{\Hypertarget{namespacelsl_a9695264d0e763474d352767702b38222}\label{namespacelsl_a9695264d0e763474d352767702b38222}} 
+\index{lsl@{lsl}!lsl\+\_\+protocol\+\_\+version@{lsl\+\_\+protocol\+\_\+version}}
+\index{lsl\+\_\+protocol\+\_\+version@{lsl\+\_\+protocol\+\_\+version}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+protocol\+\_\+version()}{lsl\_protocol\_version()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+protocol\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Protocol version. The major version is \hyperlink{namespacelsl_a59009e83a8f0e33643474b373ad2f7f2}{protocol\+\_\+version()} / 100; The minor version is \hyperlink{namespacelsl_a59009e83a8f0e33643474b373ad2f7f2}{protocol\+\_\+version()} \% 100; Clients with different minor versions are protocol-\/compatible with each other while clients with different major versions will refuse to work together. \mbox{\Hypertarget{namespacelsl_a90d24057f9ba37f33d3539666af27082}\label{namespacelsl_a90d24057f9ba37f33d3539666af27082}} 
+\index{lsl@{lsl}!lsl\+\_\+pull\+\_\+chunk\+\_\+buf@{lsl\+\_\+pull\+\_\+chunk\+\_\+buf}}
+\index{lsl\+\_\+pull\+\_\+chunk\+\_\+buf@{lsl\+\_\+pull\+\_\+chunk\+\_\+buf}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+pull\+\_\+chunk\+\_\+buf()}{lsl\_pull\_chunk\_buf()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long lsl\+::lsl\+\_\+pull\+\_\+chunk\+\_\+buf (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{char $\ast$$\ast$}]{data\+\_\+buffer,  }\item[{uint32\+\_\+t $\ast$}]{lengths\+\_\+buffer,  }\item[{double $\ast$}]{timestamp\+\_\+buffer,  }\item[{unsigned long}]{data\+\_\+buffer\+\_\+elements,  }\item[{unsigned long}]{timestamp\+\_\+buffer\+\_\+elements,  }\item[{double}]{timeout,  }\item[{int32\+\_\+t $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Pull a chunk of data from the inlet and read it into an array of binary strings. These strings may contains 0\textquotesingle{}s, therefore the lengths are read into the lengths\+\_\+buffer array. Handles type checking \& conversion. I\+M\+P\+O\+R\+T\+A\+NT\+: Note that the provided data buffer size is measured in channel values (e.\+g., floats) rather than in samples. 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em data\+\_\+buffer} & A pointer to a buffer of data values where the results shall be stored. \\
+\hline
+{\em lengths\+\_\+buffer} & A pointer to an array that holds the resulting lengths for each returned binary string. \\
+\hline
+{\em timestamp\+\_\+buffer} & A pointer to a buffer of timestamp values where time stamps shall be stored. If this is N\+U\+LL, no time stamps will be returned. \\
+\hline
+{\em data\+\_\+buffer\+\_\+elements} & The size of the data buffer, in channel data elements (of type T). Must be a multiple of the stream\textquotesingle{}s channel count. \\
+\hline
+{\em timestamp\+\_\+buffer\+\_\+elements} & The size of the timestamp buffer. If a timestamp buffer is provided then this must correspond to the same number of samples as data\+\_\+buffer\+\_\+elements. \\
+\hline
+{\em timeout} & The timeout for this operation, if any. When the timeout expires, the function may return before the entire buffer is filled. The default value of 0.\+0 will retrieve only data available for immediate pickup. \\
+\hline
+{\em ec} & Error code\+: can be either no error or lsl\+\_\+lost\+\_\+error (if the stream source has been lost). Note\+: if the timeout expires before a new sample was received the function returns 0.\+0; ec is {\itshape not} set to lsl\+\_\+timeout\+\_\+error (because this case is not considered an error condition). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data\+\_\+elements\+\_\+written Number of channel data elements written to the data buffer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a59b21970f29b294c8d4d43be06335cba}\label{namespacelsl_a59b21970f29b294c8d4d43be06335cba}} 
+\index{lsl@{lsl}!lsl\+\_\+pull\+\_\+chunk\+\_\+f@{lsl\+\_\+pull\+\_\+chunk\+\_\+f}}
+\index{lsl\+\_\+pull\+\_\+chunk\+\_\+f@{lsl\+\_\+pull\+\_\+chunk\+\_\+f}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+pull\+\_\+chunk\+\_\+f()}{lsl\_pull\_chunk\_f()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI unsigned long lsl\+::lsl\+\_\+pull\+\_\+chunk\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{float $\ast$}]{data\+\_\+buffer,  }\item[{double $\ast$}]{timestamp\+\_\+buffer,  }\item[{unsigned long}]{data\+\_\+buffer\+\_\+elements,  }\item[{unsigned long}]{timestamp\+\_\+buffer\+\_\+elements,  }\item[{double}]{timeout,  }\item[{int32\+\_\+t $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Pull a chunk of data from the inlet and read it into a buffer. Handles type checking \& conversion. I\+M\+P\+O\+R\+T\+A\+NT\+: Note that the provided data buffer size is measured in channel values (e.\+g., floats) rather than in samples. 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em data\+\_\+buffer} & A pointer to a buffer of data values where the results shall be stored. \\
+\hline
+{\em timestamp\+\_\+buffer} & A pointer to a buffer of timestamp values where time stamps shall be stored. If this is N\+U\+LL, no time stamps will be returned. \\
+\hline
+{\em data\+\_\+buffer\+\_\+elements} & The size of the data buffer, in channel data elements (of type T). Must be a multiple of the stream\textquotesingle{}s channel count. \\
+\hline
+{\em timestamp\+\_\+buffer\+\_\+elements} & The size of the timestamp buffer. If a timestamp buffer is provided then this must correspond to the same number of samples as data\+\_\+buffer\+\_\+elements. \\
+\hline
+{\em timeout} & The timeout for this operation, if any. When the timeout expires, the function may return before the entire buffer is filled. The default value of 0.\+0 will retrieve only data available for immediate pickup. \\
+\hline
+{\em ec} & Error code\+: can be either no error or lsl\+\_\+lost\+\_\+error (if the stream source has been lost). Note\+: if the timeout expires before a new sample was received the function returns 0.\+0; ec is {\itshape not} set to lsl\+\_\+timeout\+\_\+error (because this case is not considered an error condition). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data\+\_\+elements\+\_\+written Number of channel data elements written to the data buffer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_aeb6a1e871e465e4859292bc46a2e5bbd}\label{namespacelsl_aeb6a1e871e465e4859292bc46a2e5bbd}} 
+\index{lsl@{lsl}!lsl\+\_\+pull\+\_\+sample\+\_\+buf@{lsl\+\_\+pull\+\_\+sample\+\_\+buf}}
+\index{lsl\+\_\+pull\+\_\+sample\+\_\+buf@{lsl\+\_\+pull\+\_\+sample\+\_\+buf}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+pull\+\_\+sample\+\_\+buf()}{lsl\_pull\_sample\_buf()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double lsl\+::lsl\+\_\+pull\+\_\+sample\+\_\+buf (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{char $\ast$$\ast$}]{buffer,  }\item[{uint32\+\_\+t $\ast$}]{buffer\+\_\+lengths,  }\item[{int32\+\_\+t}]{buffer\+\_\+elements,  }\item[{double}]{timeout,  }\item[{int32\+\_\+t $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Pull a sample from the inlet and read it into an array of binary strings. These strings may contains 0\textquotesingle{}s, therefore the lengths are read into the buffer\+\_\+lengths array. Handles type checking \& conversion. 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em buffer} & A pointer to hold the resulting data. \\
+\hline
+{\em buffer\+\_\+lengths} & A pointer to an array that holds the resulting lengths for each returned binary string. \\
+\hline
+{\em buffer\+\_\+elements} & The number of samples allocated in the buffer and buffer\+\_\+lengths variables. Note\+: it is the responsibility of the user to allocate enough memory. \\
+\hline
+{\em timeout} & The timeout for this operation, if any. Use L\+S\+L\+\_\+\+F\+O\+R\+E\+V\+ER to effectively disable it. It is also permitted to use 0.\+0 here; in this case a sample is only returned if one is currently buffered. \\
+\hline
+{\em ec} & Error code\+: can be either no error or lsl\+\_\+lost\+\_\+error (if the stream source has been lost). Note\+: if the timeout expires before a new sample was received the function returns 0.\+0; ec is {\itshape not} set to lsl\+\_\+timeout\+\_\+error (because this case is not considered an error condition). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The capture time of the sample on the remote machine, or 0.\+0 if no new sample was available. To remap this time stamp to the local clock, add the value returned by \hyperlink{namespacelsl_a4a017b7c6d6fbe056b5394b1edff0994}{lsl\+\_\+time\+\_\+correction()} to it. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a56fc49301c94b76f1c89ab041d26bef1}\label{namespacelsl_a56fc49301c94b76f1c89ab041d26bef1}} 
+\index{lsl@{lsl}!lsl\+\_\+pull\+\_\+sample\+\_\+f@{lsl\+\_\+pull\+\_\+sample\+\_\+f}}
+\index{lsl\+\_\+pull\+\_\+sample\+\_\+f@{lsl\+\_\+pull\+\_\+sample\+\_\+f}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+pull\+\_\+sample\+\_\+f()}{lsl\_pull\_sample\_f()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double lsl\+::lsl\+\_\+pull\+\_\+sample\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{float $\ast$}]{buffer,  }\item[{int32\+\_\+t}]{buffer\+\_\+elements,  }\item[{double}]{timeout,  }\item[{int32\+\_\+t $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Pull a sample from the inlet and read it into a pointer to values. Handles type checking \& conversion. 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em buffer} & A pointer to hold the resulting values. \\
+\hline
+{\em buffer\+\_\+elements} & The number of samples allocated in the buffer. Note\+: it is the responsibility of the user to allocate enough memory. \\
+\hline
+{\em timeout} & The timeout for this operation, if any. Use L\+S\+L\+\_\+\+F\+O\+R\+E\+V\+ER to effectively disable it. It is also permitted to use 0.\+0 here; in this case a sample is only returned if one is currently buffered. \\
+\hline
+{\em ec} & Error code\+: can be either no error or lsl\+\_\+lost\+\_\+error (if the stream source has been lost). Note\+: if the timeout expires before a new sample was received the function returns 0.\+0; ec is {\itshape not} set to lsl\+\_\+timeout\+\_\+error (because this case is not considered an error condition). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The capture time of the sample on the remote machine, or 0.\+0 if no new sample was available. To remap this time stamp to the local clock, add the value returned by \hyperlink{namespacelsl_a4a017b7c6d6fbe056b5394b1edff0994}{lsl\+\_\+time\+\_\+correction()} to it. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a4b9141b42af68f2224c1f72044bf6018}\label{namespacelsl_a4b9141b42af68f2224c1f72044bf6018}} 
+\index{lsl@{lsl}!lsl\+\_\+pull\+\_\+sample\+\_\+v@{lsl\+\_\+pull\+\_\+sample\+\_\+v}}
+\index{lsl\+\_\+pull\+\_\+sample\+\_\+v@{lsl\+\_\+pull\+\_\+sample\+\_\+v}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+pull\+\_\+sample\+\_\+v()}{lsl\_pull\_sample\_v()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double lsl\+::lsl\+\_\+pull\+\_\+sample\+\_\+v (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{void $\ast$}]{buffer,  }\item[{int32\+\_\+t}]{buffer\+\_\+bytes,  }\item[{double}]{timeout,  }\item[{int32\+\_\+t $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Pull a sample from the inlet and read it into a custom struct or buffer. Overall size checking but no type checking or conversion are done. Do not use for variable-\/size/string-\/formatted streams. 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em buffer} & Pointer to hold the sample data. Search for \#pragma pack for information on how to pack structs appropriately. \\
+\hline
+{\em buffer\+\_\+bytes} & Length of the array held by buffer in bytes, not items \\
+\hline
+{\em timeout} & The timeout for this operation, if any. Aside from L\+S\+L\+\_\+\+F\+O\+R\+E\+V\+ER it is also permitted to use 0.\+0 here; in this case a sample is only returned if one is currently buffered. \\
+\hline
+{\em ec} & Error code\+: can be either no error or lsl\+\_\+lost\+\_\+error (if the stream source has been lost). Note\+: if the timeout expires before a new sample was received the function returns 0.\+0; ec is {\itshape not} set to lsl\+\_\+timeout\+\_\+error (because this case is not considered an error condition). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The capture time of the sample on the remote machine, or 0.\+0 if no new sample was available. To remap this time stamp to the local clock, add the value returned by .time\+\_\+correction() to it. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_abaf77814f92eec3728670d14195b460b}\label{namespacelsl_abaf77814f92eec3728670d14195b460b}} 
+\index{lsl@{lsl}!lsl\+\_\+push\+\_\+chunk\+\_\+f@{lsl\+\_\+push\+\_\+chunk\+\_\+f}}
+\index{lsl\+\_\+push\+\_\+chunk\+\_\+f@{lsl\+\_\+push\+\_\+chunk\+\_\+f}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+push\+\_\+chunk\+\_\+f()}{lsl\_push\_chunk\_f()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+push\+\_\+chunk\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet}}]{out,  }\item[{const float $\ast$}]{data,  }\item[{unsigned long}]{data\+\_\+elements }\end{DoxyParamCaption})}
+
+Push a chunk of multiplexed samples into the outlet. One timestamp per sample is provided. I\+M\+P\+O\+R\+T\+A\+NT\+: Note that the provided buffer size is measured in channel values (e.\+g., floats) rather than in samples. Handles type checking \& conversion. 
+\begin{DoxyParams}{Parameters}
+{\em out} & The lsl\+\_\+outlet object through which to push the data. \\
+\hline
+{\em data} & A buffer of channel values holding the data for zero or more successive samples to send. \\
+\hline
+{\em lengths} & For lsl\+\_\+push\+\_\+chunk\+\_\+buf$\ast$, a pointer the number of elements to push for each value (string lengths). \\
+\hline
+{\em timestamp} & Optionally the capture time of the most recent sample, in agreement with \hyperlink{namespacelsl_ae1766ae2ab66141cb927612e57a0c8c6}{local\+\_\+clock()}; if omitted, the current time is used. The time stamps of other samples are automatically derived based on the sampling rate of the stream. \\
+\hline
+{\em timestamps} & Alternatively a buffer of timestamp values holding time stamps for each sample in the data buffer. \\
+\hline
+{\em data\+\_\+elements} & The number of data values (of type T) in the data buffer. Must be a multiple of the channel count. \\
+\hline
+{\em pushthrough} & Whether to push the chunk through to the receivers instead of buffering it with subsequent samples. Note that the chunk\+\_\+size, if specified at outlet construction, takes precedence over the pushthrough flag. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code of the operation (usually attributed to the wrong data type). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a001aa3637915875c44c379c07c55fb3a}\label{namespacelsl_a001aa3637915875c44c379c07c55fb3a}} 
+\index{lsl@{lsl}!lsl\+\_\+push\+\_\+sample\+\_\+f@{lsl\+\_\+push\+\_\+sample\+\_\+f}}
+\index{lsl\+\_\+push\+\_\+sample\+\_\+f@{lsl\+\_\+push\+\_\+sample\+\_\+f}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+push\+\_\+sample\+\_\+f()}{lsl\_push\_sample\_f()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+push\+\_\+sample\+\_\+f (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet}}]{out,  }\item[{const float $\ast$}]{data }\end{DoxyParamCaption})}
+
+Push a pointer to some values as a sample into the outlet. Handles type checking \& conversion. 
+\begin{DoxyParams}{Parameters}
+{\em out} & The lsl\+\_\+outlet object through which to push the data. \\
+\hline
+{\em data} & A pointer to values to push. The number of values pointed to must be no less than the number of channels in the sample. \\
+\hline
+{\em lengths} & For lsl\+\_\+push\+\_\+sample\+\_\+buf$\ast$, a pointer the number of elements to push for each channel (string lengths). \\
+\hline
+{\em timestamp} & Optionally the capture time of the sample, in agreement with \hyperlink{namespacelsl_a475274f88a060924c9bd1b38879ec63a}{lsl\+\_\+local\+\_\+clock()}; if omitted, the current time is used. \\
+\hline
+{\em pushthrough} & Whether to push the sample through to the receivers instead of buffering it with subsequent samples. Note that the chunk\+\_\+size, if specified at outlet construction, takes precedence over the pushthrough flag. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code of the operation or lsl\+\_\+no\+\_\+error if successful (usually attributed to the wrong data type). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ad367e1e282a1fa614f44caaf113cf39c}\label{namespacelsl_ad367e1e282a1fa614f44caaf113cf39c}} 
+\index{lsl@{lsl}!lsl\+\_\+remove\+\_\+child@{lsl\+\_\+remove\+\_\+child}}
+\index{lsl\+\_\+remove\+\_\+child@{lsl\+\_\+remove\+\_\+child}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+remove\+\_\+child()}{lsl\_remove\_child()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+remove\+\_\+child (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e2 }\end{DoxyParamCaption})}
+
+Remove a specified child element. \mbox{\Hypertarget{namespacelsl_a1a946a99964cbd500165fbd5f3d33766}\label{namespacelsl_a1a946a99964cbd500165fbd5f3d33766}} 
+\index{lsl@{lsl}!lsl\+\_\+remove\+\_\+child\+\_\+n@{lsl\+\_\+remove\+\_\+child\+\_\+n}}
+\index{lsl\+\_\+remove\+\_\+child\+\_\+n@{lsl\+\_\+remove\+\_\+child\+\_\+n}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+remove\+\_\+child\+\_\+n()}{lsl\_remove\_child\_n()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI void lsl\+::lsl\+\_\+remove\+\_\+child\+\_\+n (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Remove a child element with the specified name. \mbox{\Hypertarget{namespacelsl_a075ab08464c90d97b8f081d89ea889f2}\label{namespacelsl_a075ab08464c90d97b8f081d89ea889f2}} 
+\index{lsl@{lsl}!lsl\+\_\+resolve\+\_\+all@{lsl\+\_\+resolve\+\_\+all}}
+\index{lsl\+\_\+resolve\+\_\+all@{lsl\+\_\+resolve\+\_\+all}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+resolve\+\_\+all()}{lsl\_resolve\_all()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+resolve\+\_\+all (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} $\ast$}]{buffer,  }\item[{uint32\+\_\+t}]{buffer\+\_\+elements,  }\item[{double}]{wait\+\_\+time }\end{DoxyParamCaption})}
+
+Resolve all streams on the network. This function returns all currently available streams from any outlet on the network. The network is usually the subnet specified at the local router, but may also include a multicast group of machines (given that the network supports it), or a list of hostnames. These details may optionally be customized by the experimenter in a configuration file (see page Network Connectivity in the L\+SL wiki). This is the default mechanism used by the browsing programs and the recording program. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & A user-\/allocated buffer to hold the resolve results. Note\+: it is the user\textquotesingle{}s responsibility to either destroy the resulting streaminfo objects or to pass them back to the L\+SL during during creation of an inlet. Note 2\+: The \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}\textquotesingle{}s returned by the resolver are only short versions that do not include the .desc() field (which can be arbitrarily big). To obtain the full stream information you need to call .info() on the inlet after you have created one. \\
+\hline
+{\em buffer\+\_\+elements} & The user-\/provided buffer length. \\
+\hline
+{\em wait\+\_\+time} & The waiting time for the operation, in seconds, to search for streams. The recommended wait time is 1 second (or 2 for a busy and large recording operation). Warning\+: If this is too short ($<$0.\+5s) only a subset (or none) of the outlets that are present on the network may be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of results written into the buffer (never more than the provided \# of slots) or a negative number if an error has occurred (values corresponding to lsl\+\_\+error\+\_\+code\+\_\+t). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a11a5ef91d32961e0ad1d44dbef948399}\label{namespacelsl_a11a5ef91d32961e0ad1d44dbef948399}} 
+\index{lsl@{lsl}!lsl\+\_\+resolve\+\_\+bypred@{lsl\+\_\+resolve\+\_\+bypred}}
+\index{lsl\+\_\+resolve\+\_\+bypred@{lsl\+\_\+resolve\+\_\+bypred}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+resolve\+\_\+bypred()}{lsl\_resolve\_bypred()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+resolve\+\_\+bypred (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} $\ast$}]{buffer,  }\item[{uint32\+\_\+t}]{buffer\+\_\+elements,  }\item[{const char $\ast$}]{pred,  }\item[{int32\+\_\+t}]{minimum,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+Resolve all streams that match a given predicate. Advanced query that allows to impose more conditions on the retrieved streams; the given string is an X\+Path 1.\+0 predicate for the $<$info$>$ node (omitting the surrounding \mbox{[}\mbox{]}\textquotesingle{}s), see also \href{http://en.wikipedia.org/w/index.php?title=XPath_1.0&oldid=474981951}{\tt http\+://en.\+wikipedia.\+org/w/index.\+php?title=\+X\+Path\+\_\+1.\+0\&oldid=474981951}. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & A user-\/allocated buffer to hold the resolve results. Note\+: it is the user\textquotesingle{}s responsibility to either destroy the resulting streaminfo objects or to pass them back to the L\+SL during during creation of an inlet. Note 2\+: The \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}\textquotesingle{}s returned by the resolver are only short versions that do not include the .desc() field (which can be arbitrarily big). To obtain the full stream information you need to call .info() on the inlet after you have created one. \\
+\hline
+{\em buffer\+\_\+elements} & The user-\/provided buffer length. \\
+\hline
+{\em pred} & The predicate string, e.\+g. \char`\"{}name=\textquotesingle{}\+Bio\+Semi\textquotesingle{}\char`\"{} or \char`\"{}type=\textquotesingle{}\+E\+E\+G\textquotesingle{} and starts-\/with(name,\textquotesingle{}\+Bio\+Semi\textquotesingle{}) and count(info/desc/channel)=32\char`\"{} \\
+\hline
+{\em minimum} & Return at least this number of streams. \\
+\hline
+{\em timeout} & Optionally a timeout of the operation, in seconds (default\+: no timeout). If the timeout expires, less than the desired number of streams (possibly none) will be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of results written into the buffer (never more than the provided \# of slots) or a negative number if an error has occurred (values corresponding to lsl\+\_\+error\+\_\+code\+\_\+t). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a66563e2290de3b056a5480ced8596ec7}\label{namespacelsl_a66563e2290de3b056a5480ced8596ec7}} 
+\index{lsl@{lsl}!lsl\+\_\+resolve\+\_\+byprop@{lsl\+\_\+resolve\+\_\+byprop}}
+\index{lsl\+\_\+resolve\+\_\+byprop@{lsl\+\_\+resolve\+\_\+byprop}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+resolve\+\_\+byprop()}{lsl\_resolve\_byprop()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+resolve\+\_\+byprop (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} $\ast$}]{buffer,  }\item[{uint32\+\_\+t}]{buffer\+\_\+elements,  }\item[{const char $\ast$}]{prop,  }\item[{const char $\ast$}]{value,  }\item[{int32\+\_\+t}]{minimum,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+Resolve all streams with a given value for a property. If the goal is to resolve a specific stream, this method is preferred over resolving all streams and then selecting the desired one. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & A user-\/allocated buffer to hold the resolve results. Note\+: it is the user\textquotesingle{}s responsibility to either destroy the resulting streaminfo objects or to pass them back to the L\+SL during during creation of an inlet. Note 2\+: The \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}\textquotesingle{}s returned by the resolver are only short versions that do not include the .desc() field (which can be arbitrarily big). To obtain the full stream information you need to call .info() on the inlet after you have created one. \\
+\hline
+{\em buffer\+\_\+elements} & The user-\/provided buffer length. \\
+\hline
+{\em prop} & The streaminfo property that should have a specific value (\char`\"{}name\char`\"{}, \char`\"{}type\char`\"{}, \char`\"{}source\+\_\+id\char`\"{}, or, e.\+g., \char`\"{}desc/manufaturer\char`\"{} if present). \\
+\hline
+{\em value} & The string value that the property should have (e.\+g., \char`\"{}\+E\+E\+G\char`\"{} as the type). \\
+\hline
+{\em minimum} & Return at least this number of streams. \\
+\hline
+{\em timeout} & Optionally a timeout of the operation, in seconds (default\+: no timeout). If the timeout expires, less than the desired number of streams (possibly none) will be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of results written into the buffer (never more than the provided \# of slots) or a negative number if an error has occurred (values corresponding to lsl\+\_\+error\+\_\+code\+\_\+t). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ab8f71fa0b8c09cb21a78aa86d03ad8fc}\label{namespacelsl_ab8f71fa0b8c09cb21a78aa86d03ad8fc}} 
+\index{lsl@{lsl}!lsl\+\_\+resolver\+\_\+results@{lsl\+\_\+resolver\+\_\+results}}
+\index{lsl\+\_\+resolver\+\_\+results@{lsl\+\_\+resolver\+\_\+results}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+resolver\+\_\+results()}{lsl\_resolver\_results()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+resolver\+\_\+results (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_ab09ea0488f986f056322c3c866dc0a0f}{lsl\+\_\+continuous\+\_\+resolver}}]{res,  }\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo} $\ast$}]{buffer,  }\item[{uint32\+\_\+t}]{buffer\+\_\+elements }\end{DoxyParamCaption})}
+
+Obtain the set of currently present streams on the network (i.\+e. resolve result). 
+\begin{DoxyParams}{Parameters}
+{\em res} & A continuous resolver (previously created with one of the lsl\+\_\+create\+\_\+continuous\+\_\+resolver functions). \\
+\hline
+{\em buffer} & A user-\/allocated buffer to hold the current resolve results. Note\+: it is the user\textquotesingle{}s responsibility to either destroy the resulting streaminfo objects or to pass them back to the L\+SL during during creation of an inlet. Note 2\+: The \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}\textquotesingle{}s returned by the resolver are only short versions that do not include the .desc() field (which can be arbitrarily big). To obtain the full stream information you need to call .info() on the inlet after you have created one. \\
+\hline
+{\em buffer\+\_\+elements} & The user-\/provided buffer length. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of results written into the buffer (never more than the provided \# of slots) or a negative number if an error has occurred (values corresponding to lsl\+\_\+error\+\_\+code\+\_\+t). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ab5511189be4bb2c887fd5e0bd0ab9b00}\label{namespacelsl_ab5511189be4bb2c887fd5e0bd0ab9b00}} 
+\index{lsl@{lsl}!lsl\+\_\+samples\+\_\+available@{lsl\+\_\+samples\+\_\+available}}
+\index{lsl\+\_\+samples\+\_\+available@{lsl\+\_\+samples\+\_\+available}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+samples\+\_\+available()}{lsl\_samples\_available()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI uint32\+\_\+t lsl\+::lsl\+\_\+samples\+\_\+available (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in }\end{DoxyParamCaption})}
+
+Query whether samples are currently available for immediate pickup. Note that it is not a good idea to use samples\+\_\+available() to determine whether a pull\+\_\+$\ast$() call would block\+: to be sure, set the pull timeout to 0.\+0 or an acceptably low value. If the underlying implementation supports it, the value will be the number of samples available (otherwise it will be 1 or 0). \mbox{\Hypertarget{namespacelsl_a637223b4077e6cfa0392d02f9f274ba7}\label{namespacelsl_a637223b4077e6cfa0392d02f9f274ba7}} 
+\index{lsl@{lsl}!lsl\+\_\+set\+\_\+child\+\_\+value@{lsl\+\_\+set\+\_\+child\+\_\+value}}
+\index{lsl\+\_\+set\+\_\+child\+\_\+value@{lsl\+\_\+set\+\_\+child\+\_\+value}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+set\+\_\+child\+\_\+value()}{lsl\_set\_child\_value()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+set\+\_\+child\+\_\+value (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Set the text value of the (nameless) plain-\/text child of a named child node. \mbox{\Hypertarget{namespacelsl_af13c49d3abab79ae9dd6d94ca7cdc877}\label{namespacelsl_af13c49d3abab79ae9dd6d94ca7cdc877}} 
+\index{lsl@{lsl}!lsl\+\_\+set\+\_\+name@{lsl\+\_\+set\+\_\+name}}
+\index{lsl\+\_\+set\+\_\+name@{lsl\+\_\+set\+\_\+name}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+set\+\_\+name()}{lsl\_set\_name()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{rhs }\end{DoxyParamCaption})}
+
+Set the element\textquotesingle{}s name. \begin{DoxyReturn}{Returns}
+0 if the node is empty (or if out of memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a36fe6c26cb8c696b658c87490d4c1059}\label{namespacelsl_a36fe6c26cb8c696b658c87490d4c1059}} 
+\index{lsl@{lsl}!lsl\+\_\+set\+\_\+postprocessing@{lsl\+\_\+set\+\_\+postprocessing}}
+\index{lsl\+\_\+set\+\_\+postprocessing@{lsl\+\_\+set\+\_\+postprocessing}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+set\+\_\+postprocessing()}{lsl\_set\_postprocessing()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+set\+\_\+postprocessing (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})}
+
+Set post-\/processing flags to use. By default, the inlet performs NO post-\/processing and returns the ground-\/truth time stamps, which can then be manually synchronized using time\+\_\+correction(), and then smoothed/dejittered if desired. This function allows automating these two and possibly more operations. Warning\+: when you enable this, you will no longer receive or be able to recover the original time stamps. 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em flags} & An integer that is the result of bitwise OR\textquotesingle{}ing one or more options from processing\+\_\+options\+\_\+t together (e.\+g., post\+\_\+clocksync$\vert$post\+\_\+dejitter); a good setting is to use post\+\_\+\+A\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code\+: if nonzero, can be lsl\+\_\+argument\+\_\+error if an unknown flag was passed in. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_ab072800f46e425c22568529419a3301b}\label{namespacelsl_ab072800f46e425c22568529419a3301b}} 
+\index{lsl@{lsl}!lsl\+\_\+set\+\_\+value@{lsl\+\_\+set\+\_\+value}}
+\index{lsl\+\_\+set\+\_\+value@{lsl\+\_\+set\+\_\+value}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+set\+\_\+value()}{lsl\_set\_value()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+set\+\_\+value (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e,  }\item[{const char $\ast$}]{rhs }\end{DoxyParamCaption})}
+
+Set the element\textquotesingle{}s value. \begin{DoxyReturn}{Returns}
+0 if the node is empty (or if out of memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a71b6f856d04b6519ab6b249499ad4e91}\label{namespacelsl_a71b6f856d04b6519ab6b249499ad4e91}} 
+\index{lsl@{lsl}!lsl\+\_\+smoothing\+\_\+halftime@{lsl\+\_\+smoothing\+\_\+halftime}}
+\index{lsl\+\_\+smoothing\+\_\+halftime@{lsl\+\_\+smoothing\+\_\+halftime}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+smoothing\+\_\+halftime()}{lsl\_smoothing\_halftime()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+smoothing\+\_\+halftime (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+Override the half-\/time (forget factor) of the time-\/stamp smoothing. The default is 90 seconds unless a different value is set in the config file. Using a longer window will yield lower jitter in the time stamps, but longer windows will have trouble tracking changes in the clock rate (usually due to temperature changes); the default is able to track changes up to 10 degrees C per minute sufficiently well. 
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em value} & The new value, in seconds. This is the time after which a past sample will be weighted by 1/2 in the exponential smoothing window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error code\+: if nonzero, can be lsl\+\_\+argument\+\_\+error if an unknown flag was passed in. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a5c10ba1783b34bd0b3f048ac4cb5fe5e}\label{namespacelsl_a5c10ba1783b34bd0b3f048ac4cb5fe5e}} 
+\index{lsl@{lsl}!lsl\+\_\+stream\+\_\+info\+\_\+matches\+\_\+query@{lsl\+\_\+stream\+\_\+info\+\_\+matches\+\_\+query}}
+\index{lsl\+\_\+stream\+\_\+info\+\_\+matches\+\_\+query@{lsl\+\_\+stream\+\_\+info\+\_\+matches\+\_\+query}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+stream\+\_\+info\+\_\+matches\+\_\+query()}{lsl\_stream\_info\_matches\_query()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int lsl\+::lsl\+\_\+stream\+\_\+info\+\_\+matches\+\_\+query (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_aa0a9ce9956061679949daa2e35aae2e8}{lsl\+\_\+streaminfo}}]{info,  }\item[{const char $\ast$}]{query }\end{DoxyParamCaption})}
+
+Tries to match the stream info X\+ML element {\ttfamily info} against an \href{https://en.wikipedia.org/wiki/XPath#Syntax_and_semantics_(XPath_1.0)}{\tt X\+Path} query.
+
+Example query strings\+: 
+\begin{DoxyCode}
+channel\_count>5 and type=\textcolor{stringliteral}{'EEG'}
+type=\textcolor{stringliteral}{'TestStream'} or contains(name,\textcolor{stringliteral}{'Brain'})
+name='ExampleStream'
+\end{DoxyCode}
+ \mbox{\Hypertarget{namespacelsl_a4a017b7c6d6fbe056b5394b1edff0994}\label{namespacelsl_a4a017b7c6d6fbe056b5394b1edff0994}} 
+\index{lsl@{lsl}!lsl\+\_\+time\+\_\+correction@{lsl\+\_\+time\+\_\+correction}}
+\index{lsl\+\_\+time\+\_\+correction@{lsl\+\_\+time\+\_\+correction}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+time\+\_\+correction()}{lsl\_time\_correction()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI double lsl\+::lsl\+\_\+time\+\_\+correction (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in,  }\item[{double}]{timeout,  }\item[{int32\+\_\+t $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Retrieve an estimated time correction offset for the given stream. The first call to this function takes several milliseconds until a reliable first estimate is obtained. Subsequent calls are instantaneous (and rely on periodic background updates). On a well-\/behaved network, the precision of these estimates should be below 1 ms (empirically it is within +/-\/0.2 ms). To get a measure of whether the network is well-\/behaved, use lsl\+\_\+time\+\_\+correction\+\_\+ex and check uncertainty (which maps to round-\/trip-\/time). 0.\+2 ms is typical of wired networks. 2 ms is typical of wireless networks. The number can be much higher on poor networks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The lsl\+\_\+inlet object to act on. \\
+\hline
+{\em remote\+\_\+time} & The current time of the remote computer that was used to generate this time\+\_\+correction. If desired, the client can fit time\+\_\+correction vs remote\+\_\+time to improve the real-\/time time\+\_\+correction further. \\
+\hline
+{\em uncertainty.} & The maximum uncertainty of the given time correction. \\
+\hline
+{\em timeout} & Timeout to acquire the first time-\/correction estimate. Use L\+S\+L\+\_\+\+F\+O\+R\+E\+V\+ER to defuse the timeout. \\
+\hline
+{\em ec} & Error code\+: if nonzero, can be either lsl\+\_\+timeout\+\_\+error (if the timeout has expired) or lsl\+\_\+lost\+\_\+error (if the stream source has been lost). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time correction estimate. This is the number that needs to be added to a time stamp that was remotely generated via \hyperlink{namespacelsl_a475274f88a060924c9bd1b38879ec63a}{lsl\+\_\+local\+\_\+clock()} to map it into the local clock domain of this machine. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a06b7b1f52525d931c57be7eb1216f50a}\label{namespacelsl_a06b7b1f52525d931c57be7eb1216f50a}} 
+\index{lsl@{lsl}!lsl\+\_\+value@{lsl\+\_\+value}}
+\index{lsl\+\_\+value@{lsl\+\_\+value}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+value()}{lsl\_value()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI const char$\ast$ lsl\+::lsl\+\_\+value (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a5edc7a49a1a1be1634fe6dce3d59c59b}{lsl\+\_\+xml\+\_\+ptr}}]{e }\end{DoxyParamCaption})}
+
+Value of the element. \mbox{\Hypertarget{namespacelsl_a0d69686f148209d1750e284a93942f19}\label{namespacelsl_a0d69686f148209d1750e284a93942f19}} 
+\index{lsl@{lsl}!lsl\+\_\+wait\+\_\+for\+\_\+consumers@{lsl\+\_\+wait\+\_\+for\+\_\+consumers}}
+\index{lsl\+\_\+wait\+\_\+for\+\_\+consumers@{lsl\+\_\+wait\+\_\+for\+\_\+consumers}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+wait\+\_\+for\+\_\+consumers()}{lsl\_wait\_for\_consumers()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI int32\+\_\+t lsl\+::lsl\+\_\+wait\+\_\+for\+\_\+consumers (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_abcf512b0f66dacf86c10b165995fd50b}{lsl\+\_\+outlet}}]{out,  }\item[{double}]{timeout }\end{DoxyParamCaption})}
+
+Wait until some consumer shows up (without wasting resources). \begin{DoxyReturn}{Returns}
+True if the wait was successful, false if the timeout expired. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a3b98f7920895623517758ed1500bcad3}\label{namespacelsl_a3b98f7920895623517758ed1500bcad3}} 
+\index{lsl@{lsl}!lsl\+\_\+was\+\_\+clock\+\_\+reset@{lsl\+\_\+was\+\_\+clock\+\_\+reset}}
+\index{lsl\+\_\+was\+\_\+clock\+\_\+reset@{lsl\+\_\+was\+\_\+clock\+\_\+reset}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{lsl\+\_\+was\+\_\+clock\+\_\+reset()}{lsl\_was\_clock\_reset()}}
+{\footnotesize\ttfamily L\+I\+B\+L\+S\+L\+\_\+\+C\+\_\+\+A\+PI uint32\+\_\+t lsl\+::lsl\+\_\+was\+\_\+clock\+\_\+reset (\begin{DoxyParamCaption}\item[{\hyperlink{namespacelsl_a884a3363cfcba75d7ce8f00c1c4c54f1}{lsl\+\_\+inlet}}]{in }\end{DoxyParamCaption})}
+
+Query whether the clock was potentially reset since the last call to was\+\_\+clock\+\_\+reset(). This is rarely-\/used function is only needed for applications that combine multiple time\+\_\+correction values to estimate precise clock drift if they should tolerate cases where the source machine was hot-\/swapped or restarted. \mbox{\Hypertarget{namespacelsl_a59009e83a8f0e33643474b373ad2f7f2}\label{namespacelsl_a59009e83a8f0e33643474b373ad2f7f2}} 
+\index{lsl@{lsl}!protocol\+\_\+version@{protocol\+\_\+version}}
+\index{protocol\+\_\+version@{protocol\+\_\+version}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{protocol\+\_\+version()}{protocol\_version()}}
+{\footnotesize\ttfamily int32\+\_\+t lsl\+::protocol\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Protocol version. The major version is \hyperlink{namespacelsl_a59009e83a8f0e33643474b373ad2f7f2}{protocol\+\_\+version()} / 100; The minor version is \hyperlink{namespacelsl_a59009e83a8f0e33643474b373ad2f7f2}{protocol\+\_\+version()} \% 100; Clients with different minor versions are protocol-\/compatible with each other while clients with different major versions will refuse to work together. \mbox{\Hypertarget{namespacelsl_a4edfbcc31f48f27e8f7c2a36b69cd4b9}\label{namespacelsl_a4edfbcc31f48f27e8f7c2a36b69cd4b9}} 
+\index{lsl@{lsl}!resolve\+\_\+stream@{resolve\+\_\+stream}}
+\index{resolve\+\_\+stream@{resolve\+\_\+stream}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{resolve\+\_\+stream()}{resolve\_stream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}$>$ lsl\+::resolve\+\_\+stream (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prop,  }\item[{const std\+::string \&}]{value,  }\item[{int32\+\_\+t}]{minimum = {\ttfamily 1},  }\item[{double}]{timeout = {\ttfamily \hyperlink{namespacelsl_a74cfbc9077aca21295117217249721ed}{F\+O\+R\+E\+V\+ER}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resolve all streams with a specific value for a given property. If the goal is to resolve a specific stream, this method is preferred over resolving all streams and then selecting the desired one. 
+\begin{DoxyParams}{Parameters}
+{\em prop} & The \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info} property that should have a specific value (e.\+g., \char`\"{}name\char`\"{}, \char`\"{}type\char`\"{}, \char`\"{}source\+\_\+id\char`\"{}, or \char`\"{}desc/manufaturer\char`\"{}). \\
+\hline
+{\em value} & The string value that the property should have (e.\+g., \char`\"{}\+E\+E\+G\char`\"{} as the type property). \\
+\hline
+{\em minimum} & Return at least this number of streams. \\
+\hline
+{\em timeout} & Optionally a timeout of the operation, in seconds (default\+: no timeout). If the timeout expires, less than the desired number of streams (possibly none) will be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of matching stream info objects (excluding their meta-\/data), any of which can subsequently be used to open an inlet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a824e14275a55df97d0552a91fc2c4097}\label{namespacelsl_a824e14275a55df97d0552a91fc2c4097}} 
+\index{lsl@{lsl}!resolve\+\_\+stream@{resolve\+\_\+stream}}
+\index{resolve\+\_\+stream@{resolve\+\_\+stream}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{resolve\+\_\+stream()}{resolve\_stream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}$>$ lsl\+::resolve\+\_\+stream (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pred,  }\item[{int32\+\_\+t}]{minimum = {\ttfamily 1},  }\item[{double}]{timeout = {\ttfamily \hyperlink{namespacelsl_a74cfbc9077aca21295117217249721ed}{F\+O\+R\+E\+V\+ER}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resolve all streams that match a given predicate. Advanced query that allows to impose more conditions on the retrieved streams; the given string is an X\+Path 1.\+0 predicate for the $<$info$>$ node (omitting the surrounding \mbox{[}\mbox{]}\textquotesingle{}s), see also \href{http://en.wikipedia.org/w/index.php?title=XPath_1.0&oldid=474981951}{\tt http\+://en.\+wikipedia.\+org/w/index.\+php?title=\+X\+Path\+\_\+1.\+0\&oldid=474981951}. 
+\begin{DoxyParams}{Parameters}
+{\em pred} & The predicate string, e.\+g. \char`\"{}name=\textquotesingle{}\+Bio\+Semi\textquotesingle{}\char`\"{} or \char`\"{}type=\textquotesingle{}\+E\+E\+G\textquotesingle{} and starts-\/with(name,\textquotesingle{}\+Bio\+Semi\textquotesingle{}) and count(info/desc/channel)=32\char`\"{} \\
+\hline
+{\em minimum} & Return at least this number of streams. \\
+\hline
+{\em timeout} & Optionally a timeout of the operation, in seconds (default\+: no timeout). If the timeout expires, less than the desired number of streams (possibly none) will be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of matching stream info objects (excluding their meta-\/data), any of which can subsequently be used to open an inlet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelsl_a2935ff3db04cd640f69943ad14a61915}\label{namespacelsl_a2935ff3db04cd640f69943ad14a61915}} 
+\index{lsl@{lsl}!resolve\+\_\+streams@{resolve\+\_\+streams}}
+\index{resolve\+\_\+streams@{resolve\+\_\+streams}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{resolve\+\_\+streams()}{resolve\_streams()}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}$>$ lsl\+::resolve\+\_\+streams (\begin{DoxyParamCaption}\item[{double}]{wait\+\_\+time = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resolve all streams on the network. This function returns all currently available streams from any outlet on the network. The network is usually the subnet specified at the local router, but may also include a multicast group of machines (given that the network supports it), or list of hostnames. These details may optionally be customized by the experimenter in a configuration file (see Network Connectivity in the L\+SL wiki). This is the default mechanism used by the browsing programs and the recording program. 
+\begin{DoxyParams}{Parameters}
+{\em wait\+\_\+time} & The waiting time for the operation, in seconds, to search for streams. Warning\+: If this is too short ($<$0.\+5s) only a subset (or none) of the outlets that are present on the network may be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of stream info objects (excluding their desc field), any of which can subsequently be used to open an inlet. The full info can be retrieve from the inlet. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacelsl_a57df17d8a2563a18b8b759a0cec696cc}\label{namespacelsl_a57df17d8a2563a18b8b759a0cec696cc}} 
+\index{lsl@{lsl}!D\+E\+D\+U\+C\+E\+D\+\_\+\+T\+I\+M\+E\+S\+T\+A\+MP@{D\+E\+D\+U\+C\+E\+D\+\_\+\+T\+I\+M\+E\+S\+T\+A\+MP}}
+\index{D\+E\+D\+U\+C\+E\+D\+\_\+\+T\+I\+M\+E\+S\+T\+A\+MP@{D\+E\+D\+U\+C\+E\+D\+\_\+\+T\+I\+M\+E\+S\+T\+A\+MP}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{D\+E\+D\+U\+C\+E\+D\+\_\+\+T\+I\+M\+E\+S\+T\+A\+MP}{DEDUCED\_TIMESTAMP}}
+{\footnotesize\ttfamily const double lsl\+::\+D\+E\+D\+U\+C\+E\+D\+\_\+\+T\+I\+M\+E\+S\+T\+A\+MP = -\/1.\+0}
+
+Constant to indicate that a sample has the next successive time stamp. This is an optional optimization to transmit less data per sample. The stamp is then deduced from the preceding one according to the stream\textquotesingle{}s sampling rate (in the case of an irregular rate, the same time stamp as before will is assumed). \mbox{\Hypertarget{namespacelsl_a74cfbc9077aca21295117217249721ed}\label{namespacelsl_a74cfbc9077aca21295117217249721ed}} 
+\index{lsl@{lsl}!F\+O\+R\+E\+V\+ER@{F\+O\+R\+E\+V\+ER}}
+\index{F\+O\+R\+E\+V\+ER@{F\+O\+R\+E\+V\+ER}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{F\+O\+R\+E\+V\+ER}{FOREVER}}
+{\footnotesize\ttfamily const double lsl\+::\+F\+O\+R\+E\+V\+ER = 32000000.\+0}
+
+A very large time duration ($>$ 1 year) for timeout values. Note that significantly larger numbers can cause the timeout to be invalid on some operating systems (e.\+g., 32-\/bit U\+N\+IX). \mbox{\Hypertarget{namespacelsl_ac7ebddefe1091ef2d9459b6f9d79f7ab}\label{namespacelsl_ac7ebddefe1091ef2d9459b6f9d79f7ab}} 
+\index{lsl@{lsl}!I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE@{I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE}}
+\index{I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE@{I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE}!lsl@{lsl}}
+\subsubsection{\texorpdfstring{I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE}{IRREGULAR\_RATE}}
+{\footnotesize\ttfamily const double lsl\+::\+I\+R\+R\+E\+G\+U\+L\+A\+R\+\_\+\+R\+A\+TE = 0.\+0}
+
+Constant to indicate that a stream has variable sampling rate. 

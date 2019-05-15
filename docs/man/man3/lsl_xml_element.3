@@ -1,0 +1,146 @@
+.TH "lsl::xml_element" 3 "Wed May 15 2019" "lslpub_ESP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lsl::xml_element
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lsl_cpp\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBxml_element\fP (\fBlsl_xml_ptr\fP obj=0)"
+.br
+.RI "Constructor\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBfirst_child\fP () const"
+.br
+.RI "Get the first child of the element\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBlast_child\fP () const"
+.br
+.RI "Get the last child of the element\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBnext_sibling\fP () const"
+.br
+.RI "Get the next sibling in the children list of the parent node\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBprevious_sibling\fP () const"
+.br
+.RI "Get the previous sibling in the children list of the parent node\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBparent\fP () const"
+.br
+.RI "Get the parent node\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBchild\fP (const std::string &\fBname\fP) const"
+.br
+.RI "Get a child with a specified name\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBnext_sibling\fP (const std::string &\fBname\fP) const"
+.br
+.RI "Get the next sibling with the specified name\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBprevious_sibling\fP (const std::string &\fBname\fP) const"
+.br
+.RI "Get the previous sibling with the specified name\&. "
+.ti -1c
+.RI "bool \fBempty\fP () const"
+.br
+.RI "Whether this node is empty\&. "
+.ti -1c
+.RI "bool \fBis_text\fP () const"
+.br
+.RI "Whether this is a text body (instead of an XML element)\&. True both for plain char data and CData\&. "
+.ti -1c
+.RI "const char * \fBname\fP () const"
+.br
+.RI "Name of the element\&. "
+.ti -1c
+.RI "const char * \fBvalue\fP () const"
+.br
+.RI "Value of the element\&. "
+.ti -1c
+.RI "const char * \fBchild_value\fP () const"
+.br
+.RI "Get child value (value of the first child that is text)\&. "
+.ti -1c
+.RI "const char * \fBchild_value\fP (const std::string &\fBname\fP) const"
+.br
+.RI "Get child value of a child with a specified name\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBappend_child_value\fP (const std::string &\fBname\fP, const std::string &\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBxml_element\fP \fBprepend_child_value\fP (const std::string &\fBname\fP, const std::string &\fBvalue\fP)"
+.br
+.ti -1c
+.RI "bool \fBset_child_value\fP (const std::string &\fBname\fP, const std::string &\fBvalue\fP)"
+.br
+.ti -1c
+.RI "bool \fBset_name\fP (const std::string &rhs)"
+.br
+.ti -1c
+.RI "bool \fBset_value\fP (const std::string &rhs)"
+.br
+.ti -1c
+.RI "\fBxml_element\fP \fBappend_child\fP (const std::string &\fBname\fP)"
+.br
+.RI "Append a child element with the specified name\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBprepend_child\fP (const std::string &\fBname\fP)"
+.br
+.RI "Prepend a child element with the specified name\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBappend_copy\fP (const \fBxml_element\fP &e)"
+.br
+.RI "Append a copy of the specified element as a child\&. "
+.ti -1c
+.RI "\fBxml_element\fP \fBprepend_copy\fP (const \fBxml_element\fP &e)"
+.br
+.RI "Prepend a child element with the specified name\&. "
+.ti -1c
+.RI "void \fBremove_child\fP (const std::string &\fBname\fP)"
+.br
+.RI "Remove a child element with the specified name\&. "
+.ti -1c
+.RI "void \fBremove_child\fP (const \fBxml_element\fP &e)"
+.br
+.RI "Remove a specified child element\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A lightweight XML element tree; models the \&.desc() field of \fBstream_info\fP\&. Has a name and can have multiple named children or have text content as value; attributes are omitted\&. Insider note: The interface is modeled after a subset of pugixml's node type and is compatible with it\&. See also http://pugixml.googlecode.com/svn/tags/latest/docs/manual/access.html for additional documentation\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBxml_element\fP lsl::xml_element::append_child_value (const std::string & name, const std::string & value)\fC [inline]\fP"
+Append a child node with a given name, which has a (nameless) plain-text child with the given text value\&. 
+.SS "\fBxml_element\fP lsl::xml_element::prepend_child_value (const std::string & name, const std::string & value)\fC [inline]\fP"
+Prepend a child node with a given name, which has a (nameless) plain-text child with the given text value\&. 
+.SS "bool lsl::xml_element::set_child_value (const std::string & name, const std::string & value)\fC [inline]\fP"
+Set the text value of the (nameless) plain-text child of a named child node\&. 
+.SS "bool lsl::xml_element::set_name (const std::string & rhs)\fC [inline]\fP"
+Set the element's name\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+False if the node is empty (or if out of memory)\&. 
+.RE
+.PP
+
+.SS "bool lsl::xml_element::set_value (const std::string & rhs)\fC [inline]\fP"
+Set the element's value\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+False if the node is empty (or if out of memory)\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for lslpub_ESP from the source code\&.

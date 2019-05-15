@@ -1,0 +1,100 @@
+.TH "src/tools.cpp" 3 "Wed May 15 2019" "lslpub_ESP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/tools.cpp \- TODO\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'tools\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBerror\fP (std::string str)"
+.br
+.RI "error Display the passed string thne exit the program\&. "
+.ti -1c
+.RI "void \fBusage\fP (std::vector< std::string > &optf, std::vector< std::string > &optl, std::vector< std::string > &optv)"
+.br
+.RI "usage Display the usage, then exit the program\&. "
+.ti -1c
+.RI "void \fBget_arg\fP (int argc, char **argv, std::vector< std::string > &optf, std::vector< std::string > &optl, std::vector< std::string > &optv)"
+.br
+.RI "get_arg Search for the potential argument in the argument passed to the program\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+TODO\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Alexis Devillard 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+08 may 2019 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void error (std::string str)"
+
+.PP
+error Display the passed string thne exit the program\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP String to display\&. 
+.RE
+.PP
+
+.SS "void get_arg (int argc, char ** argv, std::vector< std::string > & optf, std::vector< std::string > & optl, std::vector< std::string > & optv)"
+
+.PP
+get_arg Search for the potential argument in the argument passed to the program\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIargc\fP Argument counter 
+.br
+\fIargv\fP Argument array 
+.br
+\fIoptf\fP List of option flags 
+.br
+\fIoptf\fP List of option labels 
+.br
+\fIoptf\fP List of option values 
+.RE
+.PP
+
+.SS "void usage (std::vector< std::string > & optf, std::vector< std::string > & optl, std::vector< std::string > & optv)"
+
+.PP
+usage Display the usage, then exit the program\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoptf\fP List of option flags 
+.br
+\fIoptf\fP List of option labels 
+.br
+\fIoptf\fP List of option values 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for lslpub_ESP from the source code\&.

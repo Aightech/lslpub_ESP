@@ -1,0 +1,87 @@
+\hypertarget{classlsl_1_1continuous__resolver}{}\section{lsl\+:\+:continuous\+\_\+resolver Class Reference}
+\label{classlsl_1_1continuous__resolver}\index{lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}}
+
+
+{\ttfamily \#include $<$lsl\+\_\+cpp.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlsl_1_1continuous__resolver_a53b81e4328aba7a83c4aa129fa0d6f62}{continuous\+\_\+resolver} (double forget\+\_\+after=5.\+0)
+\item 
+\hyperlink{classlsl_1_1continuous__resolver_a9eb3d09ca9c4f9c493a6978d403a5144}{continuous\+\_\+resolver} (const std\+::string \&prop, const std\+::string \&value, double forget\+\_\+after=5.\+0)
+\item 
+\hyperlink{classlsl_1_1continuous__resolver_aa3b65921342bddafabe4e5d16a3c24a3}{continuous\+\_\+resolver} (const std\+::string \&pred, double forget\+\_\+after=5.\+0)
+\item 
+std\+::vector$<$ \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info} $>$ \hyperlink{classlsl_1_1continuous__resolver_ad88c16d36f8a2dc64f4ae4536445e15a}{results} ()
+\item 
+\hyperlink{classlsl_1_1continuous__resolver_a382bc439e5dbb1efcaa32def93ef01df}{$\sim$continuous\+\_\+resolver} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A convenience class that resolves streams continuously in the background throughout its lifetime and which can be queried at any time for the set of streams that are currently visible on the network. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlsl_1_1continuous__resolver_a53b81e4328aba7a83c4aa129fa0d6f62}\label{classlsl_1_1continuous__resolver_a53b81e4328aba7a83c4aa129fa0d6f62}} 
+\index{lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}!continuous\+\_\+resolver@{continuous\+\_\+resolver}}
+\index{continuous\+\_\+resolver@{continuous\+\_\+resolver}!lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}}
+\subsubsection{\texorpdfstring{continuous\+\_\+resolver()}{continuous\_resolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily lsl\+::continuous\+\_\+resolver\+::continuous\+\_\+resolver (\begin{DoxyParamCaption}\item[{double}]{forget\+\_\+after = {\ttfamily 5.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a new \hyperlink{classlsl_1_1continuous__resolver}{continuous\+\_\+resolver} that resolves all streams on the network. This is analogous to the functionality offered by the free function \hyperlink{namespacelsl_a2935ff3db04cd640f69943ad14a61915}{resolve\+\_\+streams()}. 
+\begin{DoxyParams}{Parameters}
+{\em forget\+\_\+after} & When a stream is no longer visible on the network (e.\+g., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlsl_1_1continuous__resolver_a9eb3d09ca9c4f9c493a6978d403a5144}\label{classlsl_1_1continuous__resolver_a9eb3d09ca9c4f9c493a6978d403a5144}} 
+\index{lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}!continuous\+\_\+resolver@{continuous\+\_\+resolver}}
+\index{continuous\+\_\+resolver@{continuous\+\_\+resolver}!lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}}
+\subsubsection{\texorpdfstring{continuous\+\_\+resolver()}{continuous\_resolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily lsl\+::continuous\+\_\+resolver\+::continuous\+\_\+resolver (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prop,  }\item[{const std\+::string \&}]{value,  }\item[{double}]{forget\+\_\+after = {\ttfamily 5.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a new \hyperlink{classlsl_1_1continuous__resolver}{continuous\+\_\+resolver} that resolves all streams with a specific value for a given property. This is analogous to the functionality provided by the free function resolve\+\_\+stream(prop,value). 
+\begin{DoxyParams}{Parameters}
+{\em prop} & The \hyperlink{classlsl_1_1stream__info}{stream\+\_\+info} property that should have a specific value (e.\+g., \char`\"{}name\char`\"{}, \char`\"{}type\char`\"{}, \char`\"{}source\+\_\+id\char`\"{}, or \char`\"{}desc/manufaturer\char`\"{}). \\
+\hline
+{\em value} & The string value that the property should have (e.\+g., \char`\"{}\+E\+E\+G\char`\"{} as the type property). \\
+\hline
+{\em forget\+\_\+after} & When a stream is no longer visible on the network (e.\+g., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlsl_1_1continuous__resolver_aa3b65921342bddafabe4e5d16a3c24a3}\label{classlsl_1_1continuous__resolver_aa3b65921342bddafabe4e5d16a3c24a3}} 
+\index{lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}!continuous\+\_\+resolver@{continuous\+\_\+resolver}}
+\index{continuous\+\_\+resolver@{continuous\+\_\+resolver}!lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}}
+\subsubsection{\texorpdfstring{continuous\+\_\+resolver()}{continuous\_resolver()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily lsl\+::continuous\+\_\+resolver\+::continuous\+\_\+resolver (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pred,  }\item[{double}]{forget\+\_\+after = {\ttfamily 5.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a new \hyperlink{classlsl_1_1continuous__resolver}{continuous\+\_\+resolver} that resolves all streams that match a given X\+Path 1.\+0 predicate. This is analogous to the functionality provided by the free function resolve\+\_\+stream(pred). 
+\begin{DoxyParams}{Parameters}
+{\em pred} & The predicate string, e.\+g. \char`\"{}name=\textquotesingle{}\+Bio\+Semi\textquotesingle{}\char`\"{} or \char`\"{}type=\textquotesingle{}\+E\+E\+G\textquotesingle{} and starts-\/with(name,\textquotesingle{}\+Bio\+Semi\textquotesingle{}) and count(info/desc/channel)=32\char`\"{} \\
+\hline
+{\em forget\+\_\+after} & When a stream is no longer visible on the network (e.\+g., because it was shut down), this is the time in seconds after which it is no longer reported by the resolver. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlsl_1_1continuous__resolver_a382bc439e5dbb1efcaa32def93ef01df}\label{classlsl_1_1continuous__resolver_a382bc439e5dbb1efcaa32def93ef01df}} 
+\index{lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}!````~continuous\+\_\+resolver@{$\sim$continuous\+\_\+resolver}}
+\index{````~continuous\+\_\+resolver@{$\sim$continuous\+\_\+resolver}!lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}}
+\subsubsection{\texorpdfstring{$\sim$continuous\+\_\+resolver()}{~continuous\_resolver()}}
+{\footnotesize\ttfamily lsl\+::continuous\+\_\+resolver\+::$\sim$continuous\+\_\+resolver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlsl_1_1continuous__resolver_ad88c16d36f8a2dc64f4ae4536445e15a}\label{classlsl_1_1continuous__resolver_ad88c16d36f8a2dc64f4ae4536445e15a}} 
+\index{lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}!results@{results}}
+\index{results@{results}!lsl\+::continuous\+\_\+resolver@{lsl\+::continuous\+\_\+resolver}}
+\subsubsection{\texorpdfstring{results()}{results()}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classlsl_1_1stream__info}{stream\+\_\+info}$>$ lsl\+::continuous\+\_\+resolver\+::results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Obtain the set of currently present streams on the network (i.\+e. resolve result). \begin{DoxyReturn}{Returns}
+A vector of matching stream info objects (excluding their meta-\/data), any of which can subsequently be used to open an inlet. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/lsl\+\_\+cpp.\+h\end{DoxyCompactItemize}
