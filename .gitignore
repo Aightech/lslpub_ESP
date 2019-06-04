@@ -9,7 +9,8 @@
 !/lib
 !/lib/*
 !.gitmodules
-!README.md
+!README.org
+!BUILD_LSL.org
 !CMakeLists.txt
 !/esp
 !/esp/*
