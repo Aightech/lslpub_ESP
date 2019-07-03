@@ -2,7 +2,7 @@
 [[https://aightech.github.io/lslpub_OTB/html/index.html)][Documentation]]
 
 ** Presentation
-C++ programs that gets the data from the OTBiolab quattrocento device and publishes them in a LSL stream.
+C++ programs that gets the data from a ESP  device and publishes them in a LSL stream.
 
 ** Usage
 *** Requirements
