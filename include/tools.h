@@ -10,7 +10,7 @@
 #ifndef TOOLS_H
 #define TOOLS_H
 #include <iostream>
-#include <pqxx/pqxx>
+#include <vector>
 #include <string>
 
 /**
